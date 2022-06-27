@@ -28,7 +28,7 @@ Optimized for multihead setup (lots of client -> screen keybinds)
 * amixer
     * Used for audio management
 * Rofi
-    * Various menu's
+    * Various menus
 
 Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set them as such.
 
