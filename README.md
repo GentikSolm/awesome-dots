@@ -22,9 +22,11 @@ Optimized for multihead setup (lots of client -> screen keybinds)
     * Screenshotter
 * xclip
     * Copy screenshots
-* https://github.com/linuxdotexe/nordic-wallpapers
+* nordic-wallpapers-git
     * Wallpapers
-    * See `awesome/scripts/set_wallpapers`
+    * https://github.com/linuxdotexe/nordic-wallpapers
+    * `yay -S nordic-wallpapers-git` if your on arch
+    * See `awesome/scripts/set_wallpapers` if you want to change the location
 * amixer
     * Used for audio management
 * Rofi
