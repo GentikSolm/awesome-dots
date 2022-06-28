@@ -16,6 +16,8 @@ Optimized for multihead setup (lots of client -> screen keybinds)
 
 ## Dependencies
 
+* awesome-git
+    * Is not compatable with `awesome`, need the git version
 * Picom
     * Picom adds blur effect to most windows.
 * maim
