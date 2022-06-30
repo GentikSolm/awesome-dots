@@ -125,7 +125,7 @@ Helper functions are in `helpers.lua`
 Shell scripts are in `scripts`  
 Volume Slider is, well I think you can find it.  
 
-These will be most likely be further broken out as I work on the files
+These will be most likely be further broken out as I work on the files  
 The goal is for these to be extremely portable, and stay as fast as possible.
 
 # To-dos
