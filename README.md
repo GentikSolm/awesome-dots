@@ -47,7 +47,9 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 |`modkey` + `j` | Move client to previous tag |
 |`modkey` + `l` | Move client to next screen |
 |`modkey` + `h` | Move client to previous screen |
-|`modkey` + `Shift` + `k`| View Next Tag |
+|`Scrollwheel+` | View next tag |
+|`Scrollwheel-` | View previous tag |
+|`modkey` + `Shift` + `k`| View next Tag |
 |`modkey` + `Shift` + `j` | View previous tag |
 |`modkey` + `Shift` + `l` | Focus next screen |
 |`modkey` + `Shift` + `h` | Focus previous screen |
@@ -84,6 +86,9 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 |`altkey` + `c` | Toggle floating |
 |`altkey` + `u` | Jump to urgent client |
 |`altkey` + `Tab` | Focus last focused client |
+|`modkey` + `m` | Maximize client |
+|`modkey` + `Shift` + `m` | Maximize client horizontally|
+|`modkey` + `Control` + `m` | Maximize client vertically|
 |`modkey` + `altkey` + `k` | Swap with next client in tag |
 |`modkey` + `altkey` + `j` | Swap with previous client in tag |
 
@@ -122,4 +127,14 @@ Volume Slider is, well I think you can find it.
 
 These will be most likely be further broken out as I work on the files
 The goal is for these to be extremely portable, and stay as fast as possible.
+
+# To-dos
+
+-[ ] Move client tags to separate file
+-[ ] Move all key files to keys folder
+-[ ] Possibly add more Keybinds
+-[ ] Create init script
+-[ ] Move startup programs to separate file
+-[ ] Make wallpaper script more configurable
+-[ ] Make central location for variables
 

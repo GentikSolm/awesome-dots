@@ -50,18 +50,6 @@ end
 -- Themes define colours, icons, font and wallpapers.
 local theme = beautiful.init("~/.config/awesome/themes/nord/theme.lua")
 
--- Number of attached monitors
-local monitors = screen:count()
-
--- Used later for screen rule that break without this check
--- It is equal to min(monitors, 2), where 2 is the monitor in which I want those programs in a multi monitor setup
-local minscreen
-if monitors < 2 then
-  minscreen = monitors
-else
-  minscreen = 2
-end
-
 -- Helper function that updates a taglist item
 local update_taglist = function (item, tag, index)
   if tag.selected then
@@ -75,26 +63,7 @@ local update_taglist = function (item, tag, index)
   end
 end
 
--- Autostart programs
-local autostart = function(...)
-  local size = select('#', ...)
-  
-   if size >= 0 then
-      awful.spawn.once(select(1, ...), { focus = true })
-   end
-   if size >= 1 then
-      for _, app in ipairs(select(2, ...)) do
-         awful.spawn.once(app, { focus = false })
-      end
-   end
-   if size >= 2 then
-      for _, app in ipairs(select(3, ...)) do
-        awful.spawn.with_shell(app)
-      end
-   end
-end
-
-               -- This is used later as the default terminal and editor to run.
+-- This is used later as the default terminal and editor to run.
 terminal = "kitty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = "kitty -e emacsclient -t"
@@ -185,24 +154,6 @@ local tasklist_buttons = gears.table.join(
                      awful.button({ }, 5, function ()
                                               awful.client.focus.byidx(-1)
                                           end))
-
--- local function set_wallpaper(s)
---     -- Wallpaper
---     if beautiful.wallpaper then
---       local wallpaper =  beautiful.wallpaper
--- 	local background = beautiful.background
---         -- If wallpaper is a function, call it with the screen
---         if type(wallpaper) == "function" then
---             wallpaper = wallpaper(s)
---         end
---         gears.wallpaper.maximized(wallpaper, s)
---     end
--- end
-
-
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
--- screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -295,7 +246,6 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -305,41 +255,37 @@ activetags = {}
 
 -- {{{ Key bindings
 clientkeys = gears.table.join(
-    awful.key({ modkey, }, "q",      function (c) c:kill()                         end,
-              {description = "close", group = "client"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "client"}),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to screen", group = "client"}),
-    awful.key({ modkey,  "Control" }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey,           }, "n",
+    awful.key({ modkey},
+        "q",
         function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end ,
-        {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
+            c:kill()
+        end,
+        {description = "close", group = "client"}
+    ),
+    awful.key({modkey},
+        "m",
         function (c)
             c.maximized = not c.maximized
             c:raise()
-        end ,
-        {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
+        end,
+        {description = "(un)maximize", group = "client"}
+    ),
+    awful.key({modkey, "Control" },
+        "m",
         function (c)
             c.maximized_vertical = not c.maximized_vertical
             c:raise()
         end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
+        {description = "(un)maximize vertically", group = "client"}
+    ),
+    awful.key({ modkey, "Shift"},
+        "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        end,
+        {description = "(un)maximize horizontally", group = "client"}
+    )
 )
 
 -- Bind all key numbers to tags.
