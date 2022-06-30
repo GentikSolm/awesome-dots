@@ -314,7 +314,7 @@ local global_keys = awful.util.table.join(
         end,
         {description = "show the menubar", group = "launcher"}
     ),
-    awful.key({modkey},
+    awful.key({modkey, "Shift"},
         "t",
         function()
             awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible

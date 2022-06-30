@@ -100,7 +100,7 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 |`modkey` + `r` | Run Prompt |
 |`modkey` + `x` | Run lua code |
 |`modkey` + `p` | Show menu bar |
-|`modkey` + `t` | Toggle system tray |
+|`modkey` + `Shift` + `t` | Toggle system tray |
 
 ### Rofi Menus
 | Keybind | Action |
