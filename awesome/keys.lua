@@ -155,6 +155,13 @@ local global_keys = awful.util.table.join(
     ),
 
 -- Media
+    awful.key({modkey},
+        "XF86AudioNext",
+        function()
+            awful.spawn.with_shell("~/.config/awesome/scripts/audio_switcher.sh")
+        end,
+        {description = "Move to next audio sink", group = "audio"}
+    ),
     awful.key({ },
         "XF86AudioRaiseVolume",
         function ()
@@ -326,7 +333,7 @@ local global_keys = awful.util.table.join(
     awful.key({modkey, "Shift"},
         "p",
         function ()
-            awful.spawn.with_shell("~/.config/awesome/power_menu.sh")
+            awful.spawn.with_shell("~/.config/awesome/scripts/power_menu.sh")
         end,
         {description = "Power menu", group = "utility"}
     ),

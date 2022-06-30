@@ -76,6 +76,7 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 * `XF86Audio[Raise|Lower]Volume` mapped to amixer
 * `XF86AudioMute` mapped to amixer
 * `XF86Audio[Play|Next|Prev]` mapped to dbus-sent `>` Spotify
+* `modkey` + `XF86AudioNext` mapped to next sink (switch output device, and move all sink-inputs)
 
 ### Client Management
 | Keybind | Action |
