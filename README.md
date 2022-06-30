@@ -9,10 +9,10 @@ Lightweight volume popup that I spent far too much time on
 Toggles for `stay ontop` and converting tiled clients to floating (modkey + f and modkey + c respectfully)  
 `Blazing Fast`  
 Random wallpapers from nordic github repo (Regenerate via Control + alt + w)  
-Rofi menu's for starting applications + powermenu  
-Screenshotter that copys to clipboard  
+Rofi menu's for starting applications + power menu  
+Screenshotter that copies to clipboard  
 Blur effects (thanks picom)  
-Optimized for multihead setup (lots of client -> screen keybinds)  
+Optimized for multihead setup (lots of client -> screen key binds)  
 
 ## Dependencies
 
@@ -36,9 +36,86 @@ Optimized for multihead setup (lots of client -> screen keybinds)
 
 Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set them as such.
 
+# Key binds
+
+### Tag Control
+
+| Keybind | Action |
+|---------|--------|
+|`modkey` + `0` | Toggle all tags visible |
+|`modkey` + `k` | Move client to next tag |
+|`modkey` + `j` | Move client to previous tag |
+|`modkey` + `l` | Move client to next screen |
+|`modkey` + `h` | Move client to previous screen |
+|`modkey` + `Shift` + `k`| View Next Tag |
+|`modkey` + `Shift` + `j` | View previous tag |
+|`modkey` + `Shift` + `l` | Focus next screen |
+|`modkey` + `Shift` + `h` | Focus previous screen |
+|`modkey` + `Escape` | Back to last seen tag |
+
+
+### Applications
+| Keybind | Action |
+|---------|--------|
+|`modkey` + `s` | Open Spotify |
+|`modkey` + `t` | Open Telegram |
+|`modkey` + `d` | Open Discord |
+|`modkey` + `b` | Open Firefox |
+|`modkey` + `Return` | Open terminal |
+
+### Screenshots
+| Keybind | Action |
+|---------|--------|
+|`Print` | Screenshot all monitors and copy to clipboard|
+|`modkey` + `Shift` + `s` | Screenshot area and copy to clipboard |
+
+### Media
+
+* `XF86Audio[Raise|Lower]Volume` mapped to amixer
+* `XF86AudioMute` mapped to amixer
+* `XF86Audio[Play|Next|Prev]` mapped to dbus-sent `>` Spotify
+
+### Client Management
+| Keybind | Action |
+|---------|--------|
+|`altkey` + `k` | Focus next client in tag |
+|`altkey` + `j` | Focus previous client in tag |
+|`altkey` + `f` | Force client as raised |
+|`altkey` + `c` | Toggle floating |
+|`altkey` + `u` | Jump to urgent client |
+|`altkey` + `Tab` | Focus last focused client |
+|`modkey` + `altkey` + `k` | Swap with next client in tag |
+|`modkey` + `altkey` + `j` | Swap with previous client in tag |
+
+### AwesomeWM
+| Keybind | Action |
+|---------|--------|
+|`modkey` + `w` | Show main menu |
+|`modkey` + `Shift` + `r` | Restart awesome |
+|`modkey` + `Shift` + `e` | Quit awesome |
+
+### Prompt and Top Bar
+| Keybind | Action |
+|---------|--------|
+|`modkey` + `r` | Run Prompt |
+|`modkey` + `x` | Run lua code |
+|`modkey` + `p` | Show menu bar |
+|`modkey` + `t` | Toggle system tray |
+
+### Rofi Menus
+| Keybind | Action |
+|---------|--------|
+|`modkey` + `Space` | Rofi Menu |
+|`modkey` + `Shift` + `p` | Power Menu |
+
+### Wallpaper
+| Keybind | Action |
+|---------|--------|
+|`altkey` + `Control` + `w` | Refresh wallpapers|
+
 ## Structure
 
-All keybinds are in `keys.lua`  
+All key binds are in `keys.lua`  
 Helper functions are in `helpers.lua`  
 Shell scripts are in `scripts`  
 Volume Slider is, well I think you can find it.  
