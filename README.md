@@ -7,12 +7,12 @@ Enough to get the job done without sacrificing speed.
 
 Lightweight volume popup that I spent far too much time on  
 Toggles for `stay ontop` and converting tiled clients to floating (modkey + f and modkey + c respectfully)  
-`Blazing Fast`  
 Random wallpapers from nordic github repo (Regenerate via Control + alt + w)  
 Rofi menu's for starting applications + power menu  
 Screenshotter that copies to clipboard  
 Blur effects (thanks picom)  
 Optimized for multihead setup (lots of client -> screen key binds)  
+Blazingly Fast  
 
 ## Dependencies
 
