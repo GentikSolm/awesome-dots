@@ -12,6 +12,10 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+require('plugins')
+
+g.mapleader = ","
+
 opt.expandtab = true                -- Use spaces instead of tabs
 opt.hidden = true                   -- Enable background buffers
 opt.ignorecase = true               -- Ignore case
@@ -27,6 +31,7 @@ opt.smartindent = true              -- Insert indents automatically
 opt.splitbelow = true               -- Put new windows below current
 opt.splitright = true               -- Put new windows right of current
 opt.tabstop = 4                     -- Number of spaces tabs count for
+opt.relativenumber = true           -- relative line numbers
 -- opt.termguicolors = true            -- True color support
 opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
 opt.wrap = false                    -- Disable line wrap
@@ -38,3 +43,9 @@ opt.spellsuggest = "best, 9"
 
 map("n", "<F3>", ":set spell!<CR>", {silent = true})
 
+
+map("n", "<leader>c", ":noh<CR>")
+map("n", "<leader>ff", ":Telescope find_files<CR>")
+map("n", "<leader>fg", ":Telescope live_grep<CR>")
+map("n", "<leader>fb", ":Telescope buffers<CR>")
+map("n", "<leader>fh", ":Telescope help_tags<CR>")
