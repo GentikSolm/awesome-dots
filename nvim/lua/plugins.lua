@@ -11,4 +11,8 @@ return require('packer').startup(function()
             {"nvim-treesitter/nvim-treesitter"}
         }
     }
+
+    use "HerringtonDarkholme/yats.vim"
+
+    use "maxmellon/vim-jsx-pretty"
 end)

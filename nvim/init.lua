@@ -3,6 +3,7 @@ local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
+local api = vim.api
 
 function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
@@ -12,6 +13,30 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+function nvim_create_augroups(definitions)
+  for group_name, definition in pairs(definitions) do
+    api.nvim_command('augroup '..group_name)
+    api.nvim_command('autocmd!')
+    for _, def in ipairs(definition) do
+      local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+      api.nvim_command(command)
+    end
+    api.nvim_command('augroup END')
+  end
+end
+
+local autocmds = {
+    terminal_job = {
+        { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] };
+        { "TermOpen", "*", "startinsert" };
+        { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber" };
+    };
+    packer = {
+        { "BufWritePost", "plugins.lua", "PackerCompile" };
+    };
+}
+
+nvim_create_augroups(autocmds)
 require('plugins')
 
 g.mapleader = ","
@@ -42,9 +67,8 @@ opt.spelllang = "en"                -- language for spell checker
 opt.spellsuggest = "best, 9"
 
 map("n", "<F3>", ":set spell!<CR>", {silent = true})
-
-
 map("n", "<leader>c", ":noh<CR>")
+map("n", "<leader>t", ":terminal<CR>")
 map("n", "<leader>ff", ":Telescope find_files<CR>")
 map("n", "<leader>fg", ":Telescope live_grep<CR>")
 map("n", "<leader>fb", ":Telescope buffers<CR>")
