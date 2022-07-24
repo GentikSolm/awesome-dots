@@ -15,4 +15,8 @@ return require('packer').startup(function()
     use "HerringtonDarkholme/yats.vim"
 
     use "maxmellon/vim-jsx-pretty"
+
+    use "lukas-reineke/indent-blankline.nvim"
+
+    use "folke/tokyonight.nvim"
 end)
