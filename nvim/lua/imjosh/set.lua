@@ -26,11 +26,23 @@ local autocmds = {
     packer = {
         { "BufWritePost", "plugins.lua", "PackerCompile" };
     };
+    project_drawer = {
+        {"VimEnter", "*", ":Lexplore"}
+    };
 }
 
-nvim_create_augroups(autocmds)
 g.mapleader = ","
 
+-- netrw config
+g.netrw_preview = 1
+g.netrw_alto = 0
+g.netrw_liststyle = 3
+g.netrw_banner = 0
+g.netrw_browse_split = 4
+g.netrw_altv = 1
+g.netrw_winsize = 15
+
+-- base nvim config
 opt.expandtab = true                -- Use spaces instead of tabs
 opt.hidden = true                   -- Enable background buffers
 opt.ignorecase = true               -- Ignore case
@@ -48,7 +60,6 @@ opt.splitright = true               -- Put new windows right of current
 opt.tabstop = 4                     -- Number of spaces tabs count for
 opt.softtabstop = 4                 -- Soft tab stop
 opt.shiftwidth = 4
-opt.hlsearch = false
 opt.incsearch = true
 opt.relativenumber = true           -- relative line numbers
 opt.termguicolors = true            -- True color support
@@ -60,3 +71,4 @@ opt.shell = 'zsh'                   -- use zsh shell
 opt.spelllang = "en"                -- language for spell checker
 opt.spellsuggest = "best, 9"
 
+nvim_create_augroups(autocmds)
