@@ -19,4 +19,7 @@ return require('packer').startup(function()
     use "lukas-reineke/indent-blankline.nvim"
 
     use "folke/tokyonight.nvim"
+
+    use {"neoclide/coc.nvim", branch="release"}
+
 end)

@@ -42,6 +42,11 @@ g.netrw_browse_split = 4
 g.netrw_altv = 1
 g.netrw_winsize = 15
 
+-- coc Config
+opt.signcolumn = "number"
+opt.updatetime = 300
+opt.cmdheight = 2
+
 -- base nvim config
 opt.expandtab = true                -- Use spaces instead of tabs
 opt.hidden = true                   -- Enable background buffers
