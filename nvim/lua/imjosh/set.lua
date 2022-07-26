@@ -27,25 +27,28 @@ local autocmds = {
         { "BufWritePost", "plugins.lua", "PackerCompile" };
     };
     project_drawer = {
-        {"VimEnter", "*", ":Lexplore"}
+        {"VimEnter", "*", ":Neotree focus"}
     };
 }
 
 g.mapleader = ","
 
 -- netrw config
-g.netrw_preview = 1
-g.netrw_alto = 0
-g.netrw_liststyle = 3
-g.netrw_banner = 0
-g.netrw_browse_split = 4
-g.netrw_altv = 1
-g.netrw_winsize = 15
+-- g.netrw_preview = 1
+-- g.netrw_alto = 0
+-- g.netrw_liststyle = 3
+-- g.netrw_banner = 0
+-- g.netrw_browse_split = 4
+-- g.netrw_altv = 1
+-- g.netrw_winsize = 15
 
 -- coc Config
 opt.signcolumn = "number"
 opt.updatetime = 300
 opt.cmdheight = 2
+
+-- Git config
+vim.cmd("set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}")
 
 -- base nvim config
 opt.expandtab = true                -- Use spaces instead of tabs
@@ -68,7 +71,9 @@ opt.shiftwidth = 4
 opt.incsearch = true
 opt.relativenumber = true           -- relative line numbers
 opt.termguicolors = true            -- True color support
-opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
+-- opt.wildmode = {'longest', 'full'}  -- Command-line completion mode
+g.wildmenu = false
+
 opt.wrap = false                    -- Disable line wrap
 opt.mouse = "a"                     -- make mouse usable
 opt.laststatus = 2                  -- keep buffer open
