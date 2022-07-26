@@ -27,20 +27,11 @@ local autocmds = {
         { "BufWritePost", "plugins.lua", "PackerCompile" };
     };
     project_drawer = {
-        {"VimEnter", "*", ":Neotree focus"}
+        {"VimEnter", "*", ":Neotree show"}
     };
 }
 
 g.mapleader = ","
-
--- netrw config
--- g.netrw_preview = 1
--- g.netrw_alto = 0
--- g.netrw_liststyle = 3
--- g.netrw_banner = 0
--- g.netrw_browse_split = 4
--- g.netrw_altv = 1
--- g.netrw_winsize = 15
 
 -- coc Config
 opt.signcolumn = "number"
@@ -71,7 +62,6 @@ opt.shiftwidth = 4
 opt.incsearch = true
 opt.relativenumber = true           -- relative line numbers
 opt.termguicolors = true            -- True color support
--- opt.wildmode = {'longest', 'full'}  -- Command-line completion mode
 g.wildmenu = false
 
 opt.wrap = false                    -- Disable line wrap
