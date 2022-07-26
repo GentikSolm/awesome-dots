@@ -39,7 +39,7 @@ opt.updatetime = 300
 opt.cmdheight = 2
 
 -- Git config
-vim.cmd("set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}")
+vim.cmd("set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}\\ \\|\\ %F")
 
 -- base nvim config
 opt.expandtab = true                -- Use spaces instead of tabs
