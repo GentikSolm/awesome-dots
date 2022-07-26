@@ -2,7 +2,6 @@ local M = require("imjosh.keymap")
 local nnoremap = M.nnoremap
 local inoremap = M.inoremap
 
-nnoremap("<leader>d", "<cmd>Ex<CR>")
 nnoremap("<leader>s", ":set spell!<CR>", {silent = true})
 nnoremap("<leader>c", ":noh<CR>")
 nnoremap("<leader>t", ":terminal<CR>")
