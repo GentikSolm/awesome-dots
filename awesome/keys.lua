@@ -4,7 +4,6 @@ local menubar = require('menubar')
 local naughty = require('naughty')
 local beautiful = require('beautiful')
 local icons = require('icons')
-
 require('awful.autofocus')
 local config_dir = gears.filesystem.get_configuration_dir()
 local modkey = "Mod4"
@@ -202,8 +201,38 @@ local global_keys = awful.util.table.join(
     ),
 
 -- Client Management
---  This needs to be standardized, either vim or arrowkeys
---  note to self: MAKE UP YOUR MIND DAMMIT
+    awful.key({altkey, "Shift"}, 
+        "Tab",
+        function()
+            if cl_menu then
+                cl_menu:hide()
+                cl_menu=nil
+            else
+                client_list={}
+                local tag = awful.tag.selected()
+                for i=1, #tag:clients() do
+                    cl=tag:clients()[i]
+                    if tag:clients()[i].minimized then
+                        prefix = "_ "
+                    else
+                        prefix = "* "
+                    end
+                    if not awful.rules.match(cl, {class= "Conky"}) then
+                        client_list[i]=
+                        {prefix .. cl.name,
+                        function()
+                            tag:clients()[i].minimized=not tag:clients()[i].minimized
+                        end,
+                        cl.icon
+                        }
+                    end
+                end
+                cl_menu=awful.menu({items = client_list, theme = {width=300}})
+                cl_menu:show()
+            end
+        end,
+        {description = "select clients", group="client"}
+    ),
     awful.key({altkey},
         "k",
         function ()
