@@ -1,0 +1,14 @@
+{
+    "python.venvPath": "/home/josh/.local/share/virtualenvs",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python",
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "json"
+    ],
+    "eslint.packageManager": "yarn",
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true
+}

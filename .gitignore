@@ -1,0 +1,10 @@
+/*
+!/awesome
+!/kitty
+!/nvim
+!/README.md
+!/picom
+!/rofi
+!.gitignore
+*.lck
+nvim/plugin
