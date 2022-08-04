@@ -153,6 +153,32 @@ local global_keys = awful.util.table.join(
         {description = 'area/selected screenshot', group = 'Utility'}
     ),
 
+-- Laptop
+    awful.key({ },
+        "XF86MonBrightnessDown",
+        function ()
+            awful.util.spawn("backlight_control -5", false)
+        end
+    ),
+    awful.key({ },
+        "XF86MonBrightnessUp",
+        function ()
+            awful.util.spawn("backlight_control  +5", false)
+        end
+    ),
+    awful.key({modkey},
+        "XF86MonBrightnessDown",
+        function ()
+            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh -5", false)
+        end
+    ),
+    awful.key({modkey},
+        "XF86MonBrightnessUp",
+        function ()
+            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh 5", false)
+        end
+    ),
+
 -- Media
     awful.key({modkey},
         "XF86AudioNext",
