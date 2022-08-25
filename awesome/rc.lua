@@ -19,7 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other appfull_-- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
-config_dir = gears.filesystem.get_configuration_dir()
+local config_dir = gears.filesystem.get_configuration_dir()
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -111,6 +111,7 @@ mytextclock = wibox.widget.textclock()
 
 -- Tray menu
 tray = wibox.widget.systray()
+tray.base_size = 25
 tray.visible = false
 
 -- Create a wibox for each screen and add it
@@ -218,7 +219,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s , bg = beautiful.bg_normal})
 
     s.systray = wibox.widget.systray()
-    s.systray.visible = false
+    s.systray.visible = true
 
     -- s.focused_window = ""
 
@@ -234,7 +235,7 @@ awful.screen.connect_for_each_screen(function(s)
         mytextclock,--s.mytasklist, -- Middle widget
         { -- Right widgets
 	    layout = wibox.layout.fixed.horizontal,
-            s.systray,
+            wibox.container.margin(s.systray, 0, 0, 5),
             s.mytasklist,
             -- s.mylayoutbox,
         },
