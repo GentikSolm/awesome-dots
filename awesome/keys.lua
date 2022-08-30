@@ -404,7 +404,7 @@ local global_keys = awful.util.table.join(
     awful.key({altkey, "Control"},
         "w",
         function()
-            awful.spawn.with_shell(config_dir .. "scripts/set_wallpapers")
+            awful.spawn.with_shell(config_dir .. "scripts/set_wallpapers /home/josh/Pictures/nordic-wallpapers/wallpapers")
         end,
         {description = "reset wallpapers", group = "utility"}
     )

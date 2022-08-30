@@ -1,6 +1,12 @@
 #!/bin/bash
+
+# First Paramater should be filepath
+if [[ $# -eq 0 ]] ; then
+    echo 'Missing path to image folder'
+    exit 1
+fi
+
 set_wallpapers(){
-    local wallpaper_dir="/home/josh/Pictures/nordic-wallpapers/wallpapers"
-    feh --bg-fill $(find $wallpaper_dir -maxdepth 1 -printf "$wallpaper_dir/%f\n" | shuf -n $(xrandr | grep " connected " | wc --lines))
+    feh --bg-fill $(find $1 -maxdepth 1 -printf "$1/%f\n" | shuf -n $(xrandr | grep " connected " | wc --lines))
 }
-set_wallpapers
+set_wallpapers $1

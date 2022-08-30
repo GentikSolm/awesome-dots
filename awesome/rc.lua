@@ -444,11 +444,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- {{{
 -- Startup Applications
 do
-    local wallpaper_dir = "/usr/share/backgrounds/nordic-wallpapers-git"
     local run_on_startup = {
         "picom -b --experimental-backends --dbus --config ~/.config/picom/picom.conf",
         "xrdb $HOME/.Xresources",
-        config_dir .. "scripts/set_wallpapers",
+        config_dir .. "scripts/set_wallpapers /home/josh/Pictures/nordic-wallpapers/wallpapers",
     }
     for app = 1, #run_on_startup do
         awful.spawn.with_shell(run_on_startup[app])
