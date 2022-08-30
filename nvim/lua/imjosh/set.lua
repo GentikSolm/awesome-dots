@@ -32,7 +32,7 @@ local autocmds = {
 }
 
 g.mapleader = ","
-
+g.maplocalleader = ' '
 -- coc Config
 opt.signcolumn = "number"
 opt.updatetime = 300

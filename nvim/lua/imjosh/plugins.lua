@@ -29,6 +29,10 @@ return require('packer').startup(function()
         }
     }
 
+    use {'jalvesaq/Nvim-R',
+        branch='stable'
+    }
+
     use {
     "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
