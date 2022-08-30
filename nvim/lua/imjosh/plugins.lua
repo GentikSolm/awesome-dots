@@ -33,6 +33,8 @@ return require('packer').startup(function()
         branch='stable'
     }
 
+    use "geg2102/nvim-python-repl"
+
     use {
     "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
