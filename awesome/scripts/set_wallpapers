@@ -1,6 +1,6 @@
 #!/bin/bash
 set_wallpapers(){
     local wallpaper_dir="/home/josh/Pictures/nordic-wallpapers/wallpapers"
-    feh --bg-fill $(find $wallpaper_dir -maxdepth 1 -printf "$wallpaper_dir/%f\n" | shuf -n 2)
+    feh --bg-fill $(find $wallpaper_dir -maxdepth 1 -printf "$wallpaper_dir/%f\n" | shuf -n $(xrandr | grep " connected " | wc --lines))
 }
 set_wallpapers
