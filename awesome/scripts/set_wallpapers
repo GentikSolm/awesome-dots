@@ -1,6 +1,6 @@
 #!/bin/bash
 set_wallpapers(){
-    local wallpaper_dir="/usr/share/backgrounds/nordic-wallpapers-git"
+    local wallpaper_dir="/home/josh/Pictures/nordic-wallpapers/wallpapers"
     feh --bg-fill $(find $wallpaper_dir -maxdepth 1 -printf "$wallpaper_dir/%f\n" | shuf -n 3)
 }
 set_wallpapers
