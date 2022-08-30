@@ -5,7 +5,7 @@
 !/nvim
 !/README.md
 !/picom
-!/rofi
+!rofi.rasi
 !.gitignore
 *.lck
 nvim/plugin
