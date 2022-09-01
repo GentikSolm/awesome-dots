@@ -100,7 +100,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 theme.icon_theme = nil
 
 
-theme.taglist_text_font = "JetBrains Mono 17"
+theme.taglist_text_font = "JetBrains Mono 20"
 -- theme.taglist_text_empty    =  {"","","","","","","","",""}
 -- theme.taglist_text_occupied =  {"","","","","","","","",""}
 -- theme.taglist_text_focused  = {"","","","","","","","",""}
