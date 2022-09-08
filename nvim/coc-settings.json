@@ -10,5 +10,6 @@
     ],
     "eslint.packageManager": "yarn",
     "eslint.run": "onSave",
-    "eslint.autoFixOnSave": true
+    "eslint.autoFixOnSave": true,
+    "pyright.inlayHints.enable": false
 }
