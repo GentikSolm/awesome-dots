@@ -10,6 +10,7 @@ local gfs = require("gears.filesystem")
 local theme_path = "~/.config/awesome/themes/nord/"
 
 local theme = {}
+
 --local wibar = require("wibar")
 theme.nord0  = "#2E3440"
 theme.nord1  = "#3B4252"
@@ -44,7 +45,7 @@ theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
 
 theme.useless_gap   = dpi(15)
-theme.border_width  = dpi(0)
+theme.border_width  = dpi(5)
 theme.border_normal = theme.nord9
 theme.border_marked = theme.nord11
 
