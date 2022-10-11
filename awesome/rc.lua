@@ -6,16 +6,19 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+
 -- Widget and layout library
 local wibox = require("wibox")
+
 -- Theme handling library
 local beautiful = require("beautiful")
+
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
 local helpers = require("helpers")
 local hotkeys_popup = require("awful.hotkeys_popup")
---local runonce = require("runonce")
+
 -- Enable hotkeys help widget for VIM and other appfull_-- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
@@ -48,7 +51,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-local theme = beautiful.init("~/.config/awesome/themes/nord/theme.lua")
+beautiful.init("~/.config/awesome/themes/nord/theme.lua")
 
 -- Helper function that updates a taglist item
 local update_taglist = function (item, tag, index)
@@ -132,28 +135,6 @@ local taglist_buttons = gears.table.join(
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
-local tasklist_buttons = gears.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  c:emit_signal(
-                                                      "request::activate",
-                                                      "tasklist",
-                                                      {raise = true}
-                                                  )
-                                              end
-                                          end),
-                     awful.button({ }, 3, function()
-                                              awful.menu.client_list({ theme = { width = 250 } })
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                          end))
-
 awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
@@ -195,12 +176,6 @@ awful.screen.connect_for_each_screen(function(s)
         filter  = awful.widget.tasklist.filter.focused,
 
         widget_template = {
-          -- {
-          --  wibox.widget.base.make_widget(),
-          --  forced_height = 5,
-          --  id            = 'background_role',
-          --  widget        = wibox.container.background,
-          --},
           {
             {
                 id     = 'clienticon',
@@ -212,7 +187,6 @@ awful.screen.connect_for_each_screen(function(s)
           nil,
           layout = wibox.layout.align.vertical,
         },
-        -- buttons = tasklist_buttons
     }
 
     -- Create the wibox
@@ -220,8 +194,6 @@ awful.screen.connect_for_each_screen(function(s)
 
     s.systray = wibox.widget.systray()
     s.systray.visible = true
-
-    -- s.focused_window = ""
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -305,10 +277,6 @@ clientbuttons = gears.table.join(
     end)
 )
 
--- Set keys
--- root.keys(globalkeys)
-root.keys(require('keys'))
--- }}}
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
@@ -334,36 +302,22 @@ awful.rules.rules = {
     -- Floating clients.
     { rule_any = {
         instance = {
-          "Devtools", -- Origin client
+          "Devtools",
         },
         class = {
           "Arandr",
           "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
+      },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester",
         },
         role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+          "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
-
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
-    }
+      }, properties = { floating = true }}
 }
 -- }}}
 
@@ -393,46 +347,6 @@ client.connect_signal("manage", function (c)
 
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
-    local buttons = gears.table.join(
-        awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.move(c)
-        end),
-        awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
-        end)
-    )
-
-    awful.titlebar(c) : setup {
-        { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
-        },
-        { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
-    }
-end)
-
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = true})
@@ -455,4 +369,6 @@ do
 end
 
 
+-- Set keys
+root.keys(require('keys'))
 require("volume-slider")
