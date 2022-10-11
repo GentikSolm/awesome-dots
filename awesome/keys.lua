@@ -1,9 +1,6 @@
 local awful = require('awful')
 local gears = require('gears')
 local menubar = require('menubar')
-local naughty = require('naughty')
-local beautiful = require('beautiful')
-local icons = require('icons')
 require('awful.autofocus')
 local config_dir = gears.filesystem.get_configuration_dir()
 local modkey = "Mod4"

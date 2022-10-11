@@ -13,7 +13,6 @@ local dpi = beautiful.xresources.apply_dpi
 local offsetx = dpi(56)
 local offsety = dpi(256)
 local screen = awful.screen.focused()
-local icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/"
 
 
 -- ===================================================================
