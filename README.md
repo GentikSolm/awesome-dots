@@ -54,6 +54,10 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 |`modkey` + `Shift` + `j` | View previous tag |
 |`modkey` + `Shift` + `l` | Focus next screen |
 |`modkey` + `Shift` + `h` | Focus previous screen |
+|`altkey` + `Shift` + `tab` | Show list of clients on tag |
+
+For issues with fullscreen clients dissapearing when focusing other screen,
+use the last keybind on the above list to bring it back
 
 
 ### Applications
@@ -75,7 +79,7 @@ Make sure to check `rc.lua` for `terminal`, `editor`, and `editor_cmd` and set t
 
 * `XF86Audio[Raise|Lower]Volume` mapped to amixer
 * `XF86AudioMute` mapped to amixer
-* `XF86Audio[Play|Next|Prev]` mapped to dbus-sent `>` Spotify
+* `XF86Audio[Play|Next|Prev]` mapped to dbus-send `>` Spotify
 * `modkey` + `XF86AudioNext` mapped to next sink (switch output device, and move all sink-inputs)
 
 ### Client Management
@@ -131,11 +135,10 @@ The goal is for these to be extremely portable, and stay as fast as possible.
 
 # To-dos
 
-- [ ] Move client tags to separate file
-- [ ] Move all key files to keys folder
-- [ ] Possibly add more Keybinds
+- [X] Move all key files to keys folder
+- [X] Possibly add more Keybinds
 - [ ] Create init script
 - [ ] Move startup programs to separate file
-- [ ] Make wallpaper script more configurable
+- [X] Make wallpaper script more configurable
 - [ ] Make central location for variables
 
