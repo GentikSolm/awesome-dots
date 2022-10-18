@@ -24,11 +24,11 @@ Enough to get the job done without sacrificing speed.
     * Screenshotter
 * xclip
     * Copy screenshots
-* nordic-wallpapers-git
+* wallpaper directory
     * Wallpapers
-    * https://github.com/linuxdotexe/nordic-wallpapers
-    * `yay -S nordic-wallpapers-git` if your on arch
-    * See `awesome/scripts/set_wallpapers` if you want to change the location
+    * Can be any directory containing only images
+    * https://github.com/GentikSolm/nordic-wallpapers
+    * Change dir in `awesome/scripts/set_wallpapers`
 * amixer
     * Used for audio management
 * Rofi
