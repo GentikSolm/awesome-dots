@@ -19,11 +19,6 @@ nnoremap("<leader>fg", ":Telescope live_grep<CR>")
 -- Open new tab
 nnoremap("<leader><C-t>", ":tabnew<CR>")
 
--- Git commands
-nnoremap("<leader>gu", ":CocCommand git.chunkUndo<CR>")
-nnoremap("<leader>gi", ":CocCommand git.chunkInfo<CR>")
-nnoremap("<leader>G", ":Neotree float git_status<CR>")
-
 -- Misc helpers
 nnoremap("<leader>p", "\"0p<CR>")
 nnoremap("<leader>ra", ":%s/")

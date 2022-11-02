@@ -38,9 +38,6 @@ opt.signcolumn = "number"
 opt.updatetime = 300
 opt.cmdheight = 2
 
--- Git config
-vim.cmd("set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}\\ \\|\\ %F")
-
 -- base nvim config
 opt.expandtab = true                -- Use spaces instead of tabs
 opt.hidden = true                   -- Enable background buffers
@@ -63,6 +60,7 @@ opt.incsearch = true
 opt.relativenumber = true           -- relative line numbers
 opt.termguicolors = true            -- True color support
 opt.clipboard = "unnamedplus"       -- set clipboard to yank
+opt.laststatus = 3                  -- Global Statusline
 g.wildmenu = false
 
 opt.wrap = false                    -- Disable line wrap
