@@ -32,6 +32,8 @@ return require('packer').startup(function()
         }
     }
 
+    use 'NoahTheDuke/vim-just'
+
     use "HerringtonDarkholme/yats.vim"
 
     use "maxmellon/vim-jsx-pretty"
