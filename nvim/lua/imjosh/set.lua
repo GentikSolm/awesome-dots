@@ -69,5 +69,6 @@ opt.laststatus = 2                  -- keep buffer open
 opt.shell = 'zsh'                   -- use zsh shell
 opt.spelllang = "en"                -- language for spell checker
 opt.spellsuggest = "best, 9"
+opt.undofile = true                 -- Unlimited undos!!!
 
 nvim_create_augroups(autocmds)
