@@ -6,6 +6,10 @@ local vnoremap = M.vnoremap
 -- Toggle spell check
 nnoremap("<leader>ss", ":set spell!<CR>", {silent = true})
 
+-- Center screen on <Ctrl-[ud]>
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
 -- Clear search results
 nnoremap("<leader>sc", ":noh<CR>")
 
