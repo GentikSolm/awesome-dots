@@ -22,6 +22,11 @@ return require('packer').startup(function()
 
     use 'jiangmiao/auto-pairs'
 
+    use 'pantharshit00/vim-prisma'
+
+    use "fatih/vim-go"
+
+    use 'numToStr/prettierrc.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
