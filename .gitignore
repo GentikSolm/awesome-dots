@@ -7,5 +7,7 @@
 !/picom
 !rofi.rasi
 !.gitignore
+!justfile
 *.lck
 nvim/plugin
+
