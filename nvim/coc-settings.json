@@ -6,7 +6,8 @@
         "typescript",
         "typescriptreact",
         "javascriptreact",
-        "json"
+        "json",
+        "html"
     ],
     "eslint.packageManager": "yarn",
     "eslint.run": "onSave",

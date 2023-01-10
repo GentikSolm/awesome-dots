@@ -26,7 +26,7 @@ return require('packer').startup(function()
 
     use "fatih/vim-go"
 
-    use 'numToStr/prettierrc.nvim'
+    --use 'numToStr/prettierrc.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
