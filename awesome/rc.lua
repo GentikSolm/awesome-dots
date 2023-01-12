@@ -361,7 +361,7 @@ do
     local run_on_startup = {
         "picom -b --dbus --config ~/.config/picom/picom.conf",
         "xrdb $HOME/.Xresources",
-        "xset r rate 200 50"
+        "xset r rate 200 50",
         config_dir .. "scripts/set_wallpapers /home/josh/Pictures/nordic-wallpapers/wallpapers",
     }
     for app = 1, #run_on_startup do
