@@ -359,10 +359,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Startup Applications
 do
     local run_on_startup = {
+        config_dir .. "scripts/set_wallpapers /home/josh/Pictures/nordic-wallpapers/wallpapers",
         "picom -b --dbus --config ~/.config/picom/picom.conf",
         "xrdb $HOME/.Xresources",
         "xset r rate 200 50",
-        config_dir .. "scripts/set_wallpapers /home/josh/Pictures/nordic-wallpapers/wallpapers",
     }
     for app = 1, #run_on_startup do
         awful.spawn.with_shell(run_on_startup[app])
