@@ -23,3 +23,7 @@ fresharch:
 
     # start docker sercice
     sudo systemctl enable docker.service
+
+# Im just putting this here so i dont lose it.
+_fixnetwork:
+    sudo systemctl restart nscd.service
