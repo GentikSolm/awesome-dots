@@ -27,3 +27,6 @@ fresharch:
 # Im just putting this here so i dont lose it.
 _fixnetwork:
     sudo systemctl restart nscd.service
+
+mirrors:
+    @sudo reflector --sort rate -l 5 --country "US" -p https,rsync --save /etc/pacman.d/mirrorlist
