@@ -54,5 +54,6 @@ require('gitsigns').setup{
 
 require('imjosh.feline_config')
 require('feline').winbar.setup()
+require('lspconfig').astro.setup({})
 vim.opt.laststatus = 3
 
