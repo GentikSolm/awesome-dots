@@ -4,9 +4,7 @@ default:
 fresharch:
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-    # install yay packages
-    yay -Y --devel --combinedupgrade --batchinstall --save
-    yay awesome-git
+    # install yay packages yay -Y --devel --combinedupgrade --batchinstall --save yay awesome-git
     yay rofi
     yay picom-git
     yay feh
@@ -30,3 +28,21 @@ _fixnetwork:
 
 mirrors:
     @sudo reflector --sort rate -l 5 --country "US" -p https,rsync --save /etc/pacman.d/mirrorlist
+
+screenpad:
+    #!/bin/bash
+    set -euxo pipefail
+    sudo dkms remove -m asus-wmi -v 1.0 --all
+    sudo rm -rf /usr/src/asus-wmi-1.0
+    sudo mkdir /usr/src/asus-wmi-1.0
+    cd /usr/src/asus-wmi-1.0
+    sudo wget 'https://github.com/Plippo/asus-wmi-screenpad/archive/master.zip'
+    sudo unzip master.zip
+    sudo mv asus-wmi-screenpad-master/* .
+    sudo rmdir asus-wmi-screenpad-master
+    sudo rm master.zip
+    sudo sh prepare-for-current-kernel.sh
+    sudo dkms add -m asus-wmi -v 1.0
+    sudo dkms build -m asus-wmi -v 1.0
+    sudo dkms install --force -m asus-wmi -v 1.0
+    echo "Installed! Please Restart"

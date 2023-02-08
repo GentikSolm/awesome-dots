@@ -177,13 +177,13 @@ local global_keys = awful.util.table.join(
     awful.key({modkey},
         "XF86MonBrightnessDown",
         function ()
-            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh -5", false)
+            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh -12", false)
         end
     ),
     awful.key({modkey},
         "XF86MonBrightnessUp",
         function ()
-            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh 5", false)
+            awful.spawn.with_shell("~/.config/awesome/scripts/screenpad.sh 12", false)
         end
     ),
 
