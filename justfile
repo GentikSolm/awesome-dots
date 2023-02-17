@@ -18,6 +18,11 @@ fresharch:
     # research docker compose installation
     yay kitty-git
     yay lua
+    yay wireguard-tools
+    
+    # cli
+    yay zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     # start docker sercice
     sudo systemctl enable docker.service
