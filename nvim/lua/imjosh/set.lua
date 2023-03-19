@@ -30,9 +30,6 @@ local autocmds = {
     fileformat = {
         {"BufWritePre", "*.py,*.tsx,*.ts", ":silent call CocAction('runCommand', 'editor.action.organizeImport')"};
     };
-    project_drawer = {
-        {"VimEnter", "*", ":Neotree show"}
-    };
 }
 
 g.mapleader = ","

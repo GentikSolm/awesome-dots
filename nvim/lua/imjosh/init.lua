@@ -1,6 +1,7 @@
 require('imjosh.set')
 require('imjosh.remap')
 require('imjosh.plugins')
+require('imjosh.alpha-nvim')
 require('imjosh.plugconf')
 require("nvim-python-repl").setup()
 require("tokyonight").setup({
