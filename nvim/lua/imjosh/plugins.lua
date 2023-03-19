@@ -3,11 +3,38 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
+    ---------------------------------
+    -- LSP stuff
+    ---------------------------------
     use 'neovim/nvim-lspconfig'
+    -- astro, coc for everything else
     use 'wuelnerdotexe/vim-astro'
-    use 'andweeb/presence.nvim'
-    use 'goolord/alpha-nvim'
+    use 'pantharshit00/vim-prisma'
+    use "geg2102/nvim-python-repl"
+    use "fatih/vim-go"
+    use 'NoahTheDuke/vim-just'
+    use {'jalvesaq/Nvim-R',
+        branch='stable'
+    }
 
+    -- COC
+    use {"neoclide/coc.nvim", branch="release"}
+
+    -- Syntax highlighter
+    use 'sheerun/vim-polyglot'
+
+    ---------------------------------
+    -- UI
+    ---------------------------------
+    -- Greeter
+    use 'goolord/alpha-nvim'
+    -- Pretty indentations
+    use "lukas-reineke/indent-blankline.nvim"
+    -- Colorscheme
+    use "folke/tokyonight.nvim"
+    -- discord presence
+    use 'andweeb/presence.nvim'
+    -- Status line
     use {
         'feline-nvim/feline.nvim',
         requires = {
@@ -15,6 +42,10 @@ return require('packer').startup(function()
         }
     }
 
+    ---------------------------------
+    -- Tools / Functionality
+    ---------------------------------
+    -- Surround () "" etc and auto pairing
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -24,15 +55,9 @@ return require('packer').startup(function()
             })
         end
     })
-
     use 'jiangmiao/auto-pairs'
 
-    use 'pantharshit00/vim-prisma'
-
-    use "fatih/vim-go"
-
-    --use 'numToStr/prettierrc.nvim'
-
+    -- File finder and such
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
@@ -41,31 +66,12 @@ return require('packer').startup(function()
             {"nvim-treesitter/nvim-treesitter"}
         }
     }
-
-    use 'NoahTheDuke/vim-just'
-
-    use "HerringtonDarkholme/yats.vim"
-
-    use "maxmellon/vim-jsx-pretty"
-
-    use "lukas-reineke/indent-blankline.nvim"
-
-    use "folke/tokyonight.nvim"
-
-    use {"neoclide/coc.nvim", branch="release"}
-
     use {'gelguy/wilder.nvim',
         requires = {
             {"lambdalisue/nerdfont.vim"},
             {"romgrk/fzy-lua-native"}
         }
     }
-
-    use {'jalvesaq/Nvim-R',
-        branch='stable'
-    }
-
-    use "geg2102/nvim-python-repl"
 
     use {
     "nvim-neo-tree/neo-tree.nvim",
