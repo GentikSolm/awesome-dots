@@ -21,10 +21,14 @@ local autocmds = {
     terminal_job = {
         { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] };
         { "TermOpen", "*", "startinsert" };
-        { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber" };
+        { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber nocursorline" };
+        { "BufLeave", "term://*", "stopinsert" }
     };
     packer = {
         { "BufWritePost", "plugins.lua", "PackerCompile" };
+    };
+    fileformat = {
+        {"BufWritePre", "*.py,*.tsx,*.ts", ":silent call CocAction('runCommand', 'editor.action.organizeImport')"};
     };
     project_drawer = {
         {"VimEnter", "*", ":Neotree show"}

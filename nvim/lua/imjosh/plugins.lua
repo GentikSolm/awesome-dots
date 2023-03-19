@@ -5,6 +5,7 @@ return require('packer').startup(function()
 
     use 'neovim/nvim-lspconfig'
     use 'wuelnerdotexe/vim-astro'
+    use 'andweeb/presence.nvim'
 
     use {
         'feline-nvim/feline.nvim',
