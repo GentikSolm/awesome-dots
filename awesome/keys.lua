@@ -303,6 +303,13 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'toggle floating', group = 'client'}
 	),
+	awful.key({altkey},
+		'm',
+		function()
+            client.focus.fullscreen = not client.focus.fullscreen
+		end,
+		{description = 'Maximize client', group = 'client'}
+	),
     awful.key({modkey, altkey},
         "k",
         function ()

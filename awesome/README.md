@@ -91,6 +91,7 @@ use the last keybind on the above list to bring it back
 |`altkey` + `c` | Toggle floating |
 |`altkey` + `u` | Jump to urgent client |
 |`modkey` + `m` | Maximize client |
+|`altkey` + `m` | Fullscreen client |
 |`altkey` + `Tab` | Focus last focused client |
 |`modkey` + `Shift` + `m` | Maximize client horizontally|
 |`modkey` + `Control` + `m` | Maximize client vertically|
