@@ -12,8 +12,15 @@ then
     exit 1
 fi
 
-if ((($value + $1) < 0)) || ((($value + $1) > 255)) ;
+if ((($value + $1) > 255)) ;
 then
+	echo "255" > $batteryFile
+    exit 0
+fi
+
+if ((($value + $1) < 0));
+then
+	echo "0" > $batteryFile
     exit 0
 fi
 
