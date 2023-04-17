@@ -8,6 +8,7 @@
 !rofi.rasi
 !.gitignore
 !justfile
+!/cloc
 *.lck
 nvim/plugin
 
