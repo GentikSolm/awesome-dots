@@ -267,14 +267,14 @@ local global_keys = awful.util.table.join(
         end,
         {description = "select clients", group="client"}
     ),
-    awful.key({altkey},
+    awful.key({altkey, "Shift"},
         "k",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({altkey},
+    awful.key({altkey, "Shift"},
         "j",
         function ()
             awful.client.focus.byidx(-1)
