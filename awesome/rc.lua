@@ -67,7 +67,7 @@ local update_taglist = function (item, tag, index)
 end
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "kitty -e tmux"
 editor = os.getenv("EDITOR") or "vim"
 
 -- Default modkey.
