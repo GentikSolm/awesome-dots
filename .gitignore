@@ -5,6 +5,8 @@
 !/nvim
 !/README.md
 !/picom
+!tmux
+tmux/plugins
 !rofi.rasi
 !.gitignore
 !justfile
