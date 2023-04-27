@@ -85,14 +85,14 @@ use the last keybind on the above list to bring it back
 ### Client Management
 | Keybind | Action |
 |---------|--------|
-|`altkey` + `k` | Focus next client in tag |
-|`altkey` + `j` | Focus previous client in tag |
 |`altkey` + `f` | Force client as raised |
 |`altkey` + `c` | Toggle floating |
 |`altkey` + `u` | Jump to urgent client |
-|`modkey` + `m` | Maximize client |
 |`altkey` + `m` | Fullscreen client |
 |`altkey` + `Tab` | Focus last focused client |
+|`altkey` + `Shift`+ `k` | Focus next client in tag |
+|`altkey` + `Shift`+ `j` | Focus previous client in tag |
+|`modkey` + `m` | Fullscreen client|
 |`modkey` + `Shift` + `m` | Maximize client horizontally|
 |`modkey` + `Control` + `m` | Maximize client vertically|
 |`modkey` + `altkey` + `k` | Swap with next client in tag |
