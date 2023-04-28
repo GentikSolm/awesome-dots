@@ -17,9 +17,6 @@ return require('packer').startup(function()
         branch='stable'
     }
 
-    -- Tmux integration
-    use 'christoomey/vim-tmux-navigator'
-
     -- COC
     use {"neoclide/coc.nvim", branch="release"}
 

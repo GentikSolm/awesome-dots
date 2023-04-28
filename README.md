@@ -6,7 +6,6 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 
 * `Neovim` as Editor
 * `Kitty` as terminal emulator
-* `Tmux` as a multiplexer
 * `AwesomeWM` as window manager
 * `picom` as compositor
 * `rofi` as application launcher
