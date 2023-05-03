@@ -1,6 +1,10 @@
 default:
     @just --list
 
+update:
+    yay
+    flatpak update
+
 fresharch:
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
