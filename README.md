@@ -15,7 +15,7 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 ### Bonus
 
 If your mad enough to put linux on an Asus Zenbook Duo, you can find the XORG conf files required to get the second screen working +
-calibration [here]('/misc').
+calibration [here](misc).
 
 ## Other Tools
 Most of these dont have dotfiles associated with them, but i use them nonetheless. 
