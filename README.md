@@ -10,7 +10,7 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 * [picom](https://github.com/yshui/picom) as compositor
 * [rofi](https://github.com/davatorium/rofi) as application launcher
 * [Cousine](https://fonts.google.com/specimen/Cousine) as a font, patched with [nerd fonts](https://www.nerdfonts.com/)
-* [Slides](https://github.com/maaslalani/slides), slides for the CLI. Check out [charm](https://charm.sh/) while your at it.
+* [Slides](https://github.com/maaslalani/slides) for the CLI. Check out [charm](https://charm.sh/) while your at it.
 
 ### Bonus
 
