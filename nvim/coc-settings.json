@@ -1,43 +1,11 @@
 {
-    "python.venvPath": "/home/josh/.local/share/virtualenvs/",
-    "coc.preferences.formatOnSaveFiletypes": [
-        "python",
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact",
-        "json",
-        "html"
-    ],
-    "eslint.packageManager": "yarn",
-    "eslint.run": "onSave",
-    "eslint.autoFixOnSave": true,
-    "python.formatting.provider": "black",
-    "python.linting.lintOnSave": true,
-    "pyright.inlayHints.variableTypes": false,
-    "pyright.inlayHints.functionReturnTypes": false,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cc",
-                "cpp",
-                "c++",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-        }
-    }
+  "python.venvPath": "/home/josh/.local/share/virtualenvs/",
+  "coc.preferences.formatOnSave": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "eslint.autoFixOnSave": true,
+  "python.formatting.provider": "black",
+  "python.linting.lintOnSave": true,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false
 }

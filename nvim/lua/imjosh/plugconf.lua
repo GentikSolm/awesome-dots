@@ -47,10 +47,14 @@ wilder.set_option('pipeline', {
       wilder.check(function(ctx, x) return x == '' end),
       wilder.history(),
     },
-    wilder.python_search_pipeline({
-      pattern = wilder.python_fuzzy_pattern({
-        start_at_boundary = 0,
-      }),
+wilder.python_search_pipeline({
+      -- can be set to wilder#python_fuzzy_delimiter_pattern() for stricter fuzzy matching
+      pattern = wilder.python_fuzzy_pattern(),
+      -- omit to get results in the order they appear in the buffer
+      sorter = wilder.python_difflib_sorter(),
+      -- can be set to 're2' for performance, requires pyre2 to be installed
+      -- see :h wilder#python_search() for more details
+      engine = 're',
     })
   ),
 })
