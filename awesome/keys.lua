@@ -293,7 +293,7 @@ local global_keys = awful.util.table.join(
         {description = "Force client to stay ontop", group = "client"}
     ),
 	awful.key({altkey},
-		'c',
+		'a',
 		function()
             local c = client.focus
 			c.fullscreen = false
@@ -310,20 +310,6 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'Maximize client', group = 'client'}
 	),
-    awful.key({modkey, altkey},
-        "k",
-        function ()
-            awful.client.swap.byidx(  1)
-        end,
-        {description = "swap with next client by index", group = "client"}
-    ),
-    awful.key({modkey, altkey},
-        "j",
-        function ()
-            awful.client.swap.byidx(-1)
-        end,
-        {description = "swap with previous client by index", group = "client"}
-    ),
     awful.key({altkey},
         "u",
         awful.client.urgent.jumpto,
@@ -338,6 +324,20 @@ local global_keys = awful.util.table.join(
             end
         end,
         {description = "go back", group = "client"}
+    ),
+    awful.key({modkey, altkey},
+        "k",
+        function ()
+            awful.client.swap.byidx(  1)
+        end,
+        {description = "swap with next client by index", group = "client"}
+    ),
+    awful.key({modkey, altkey},
+        "j",
+        function ()
+            awful.client.swap.byidx(-1)
+        end,
+        {description = "swap with previous client by index", group = "client"}
     ),
 
 -- AwesomeWM

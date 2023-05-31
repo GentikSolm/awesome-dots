@@ -52,7 +52,7 @@ require('gitsigns').setup{
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
-
+require('telescope').load_extension('coc')
 require('imjosh.feline_config')
 require('feline').winbar.setup()
 require('lspconfig').astro.setup({})

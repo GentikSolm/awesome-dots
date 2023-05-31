@@ -63,8 +63,19 @@ return require('packer').startup(function()
         requires = {
             {'nvim-lua/plenary.nvim'},
             {"BurntSushi/ripgrep"},
+            {"fannheyward/telescope-coc.nvim"},
             {"nvim-treesitter/nvim-treesitter"}
-        }
+        },
+        config = function()
+            require('telescope').setup({
+                extensions = {
+                    coc = {
+                        theme = 'ivy',
+                        prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+                    }
+                },
+            })
+        end
     }
     use {'gelguy/wilder.nvim',
         requires = {
