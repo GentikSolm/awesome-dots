@@ -32,15 +32,14 @@ local spotify_widget = wibox.widget {
 
 -- Subcribe to spotify updates
 awesome.connect_signal("daemon::spotify", function(artist, title, status, image_url)
-    -- Do whatever you want with artist, title, status
-    -- ...
+    if string.len(artist) > 25 then
+        artist = string.sub(artist, 1, 25) .. '...'
+    end
+    if string.len(title) > 17 then
+        title = string.sub(title, 1, 17) .. '...'
+    end
     spotify_artist.text = artist
     spotify_title.text = title
-
-    -- Example notification (might not be needed if spotify already sends one)
-    -- if status == "playing" then
-    -- naughty.notify({ title = "Spotify | Now Playing", message= title.." by "..artist })
-    -- end
 end)
 
 local function emit_info(playerctl_output)
