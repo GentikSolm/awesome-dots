@@ -27,9 +27,6 @@ local autocmds = {
     packer = {
         { "BufWritePost", "plugins.lua", "PackerCompile" };
     };
-    fileformat = {
-        {"BufWritePre", "*.py,*.tsx,*.ts", ":silent call CocAction('runCommand', 'editor.action.organizeImport')"};
-    };
 }
 
 g.mapleader = ","

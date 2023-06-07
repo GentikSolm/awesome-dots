@@ -143,18 +143,17 @@ keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', o
 keyset("n", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
 keyset("x", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
 
-
--- Add `:Format` command to format current buffer
-vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
-keyset("x", "<leader>fc", "<Plug>(coc-format-selected)", { silent = true })
-keyset("n", "<leader>fc", ":Format<cr>", { silent = true })
-
 -- " Add `:Fold` command to fold current buffer
 vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })
 
 -- Add `:OR` command for organize imports of the current buffer
 vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 keyset("n", "<leader>or", ":OR<cr>")
+
+-- Add `:Format` command to format current buffer
+vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
+keyset("x", "<leader>fc", "<Plug>(coc-format-selected)", { silent = true })
+keyset("n", "<leader>fc", ":call CocAction('runCommand', 'editor.action.organizeImport') | Format<cr>", { silent = true })
 
 -- Mappings for CoCList
 -- code actions and coc stuff
