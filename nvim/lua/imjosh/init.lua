@@ -3,16 +3,16 @@ require('imjosh.remap')
 require('imjosh.plugins')
 require('imjosh.alpha-nvim')
 require('imjosh.plugconf')
+require('imjosh.coc')
 require("nvim-python-repl").setup()
 require("tokyonight").setup({
-    transparent = true,
-    styles = {
-        sidebars = "transparent"
-    }
+  transparent = true,
+  styles = {
+    sidebars = "transparent"
+  }
 })
-vim.cmd('source ~/.config/nvim/lua/imjosh/coc.vim') 
 
-require('gitsigns').setup{
+require('gitsigns').setup {
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
@@ -27,29 +27,29 @@ require('gitsigns').setup{
       if vim.wo.diff then return ']c' end
       vim.schedule(function() gs.next_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     map('n', '[c', function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     -- Actions
-    map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-    map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
     map('n', '<leader>gS', gs.stage_buffer)
     map('n', '<leader>gu', gs.undo_stage_hunk)
     map('n', '<leader>gR', gs.reset_buffer)
     map('n', '<leader>gp', gs.preview_hunk)
-    map('n', '<leader>gb', function() gs.blame_line{full=true} end)
+    map('n', '<leader>gb', function() gs.blame_line { full = true } end)
     map('n', '<leader>gb', gs.toggle_current_line_blame)
     map('n', '<leader>gd', gs.diffthis)
     map('n', '<leader>gD', function() gs.diffthis('~') end)
     map('n', '<leader>td', gs.toggle_deleted)
 
     -- Text object
-    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
 require('telescope').load_extension('coc')
@@ -57,4 +57,3 @@ require('imjosh.feline_config')
 require('feline').winbar.setup()
 require('lspconfig').astro.setup({})
 vim.opt.laststatus = 3
-

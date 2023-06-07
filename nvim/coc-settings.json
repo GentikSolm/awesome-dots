@@ -1,8 +1,9 @@
 {
   "python.venvPath": "/home/josh/.local/share/virtualenvs/",
-  "coc.preferences.formatOnSave": true,
-  "eslint.packageManager": "yarn",
-  "eslint.run": "onSave",
+  "coc.preferences.formatOnSave": false,
+  "eslint.packageManager": "pnpm",
+  "eslint.format.enable": false,
+  "eslint.run": "onType",
   "eslint.autoFixOnSave": true,
   "python.formatting.provider": "black",
   "python.linting.lintOnSave": true,
