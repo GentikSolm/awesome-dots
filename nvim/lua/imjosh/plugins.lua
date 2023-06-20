@@ -57,6 +57,9 @@ return require('packer').startup(function()
     })
     use 'jiangmiao/auto-pairs'
 
+    -- Sessions
+    use 'tpope/vim-obsession'
+
     -- File finder and such
     use {
         'nvim-telescope/telescope.nvim',

@@ -133,17 +133,6 @@ local global_keys = awful.util.table.join(
         end,
         { description = "open firefox", group = "app" }
     ),
-    awful.key({ modkey, "Shift" },
-        "Return",
-        function()
-            awful.spawn("firefox github.com")
-            awful.spawn("kitty -d ~/github/", {
-                screen = 1
-            })
-            awful.spawn("com.spotify.Client")
-        end,
-        { description = "start dev environment", group = "app" }
-    ),
 
     -- Screenshot
     awful.key({},
@@ -299,7 +288,7 @@ local global_keys = awful.util.table.join(
         { description = "Force client to stay ontop", group = "client" }
     ),
     awful.key({ altkey },
-        'a',
+        'c',
         function()
             local c = client.focus
             c.fullscreen = false
