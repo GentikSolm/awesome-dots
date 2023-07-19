@@ -12,6 +12,7 @@ local theme_path = "~/.config/awesome/themes/nord/"
 local theme = {}
 
 --local wibar = require("wibar")
+theme.red = '#ef4444'
 theme.nord0  = "#2E3440"
 theme.nord1  = "#3B4252"
 theme.nord2  = "#434C5E"
@@ -44,8 +45,9 @@ theme.fg_focus      = theme.fg_normal
 theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
 
-theme.useless_gap   = dpi(15)
+theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(2)
+theme.border_active = theme.red
 theme.border_normal = theme.nord9
 theme.border_marked = theme.nord11
 

@@ -454,4 +454,12 @@ function helpers.copy(orig, copies)
     return copy
 end
 
+function helpers.useless_gaps_resize(thatmuch, s, t)
+    local scr = s or awful.screen.focused()
+    local tag = t or scr.selected_tag
+    tag.gap = tag.gap + tonumber(thatmuch)
+    awful.layout.arrange(scr)
+end
+
+
 return helpers

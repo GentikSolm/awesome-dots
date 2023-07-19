@@ -1,6 +1,8 @@
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 
 -- Standard awesome library
 local gears = require("gears")
@@ -220,11 +222,17 @@ awful.screen.connect_for_each_screen(function(s)
   }
 end)
 -- }}}
-
+--
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
   awful.button({}, 4, awful.tag.viewnext),
-  awful.button({}, 5, awful.tag.viewprev)
+  awful.button({}, 5, awful.tag.viewprev),
+  awful.button({ "Control" }, 4, function()
+    helpers.useless_gaps_resize(dpi(4))
+  end),
+  awful.button({ "Control" }, 5, function()
+    helpers.useless_gaps_resize(-dpi(4))
+  end)
 ))
 -- }}}
 
@@ -363,6 +371,7 @@ end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
+  c.border_color = beautiful.border_active
   c:emit_signal("request::activate", "mouse_enter", { raise = true })
 end)
 
