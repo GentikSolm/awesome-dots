@@ -204,14 +204,14 @@ awful.screen.connect_for_each_screen(function(s)
     layout = wibox.layout.align.horizontal,
     expand = "none",
     {
-          -- Left widgets
+      -- Left widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.container.margin(s.mytaglist, 5, 0, 0),
       s.mypromptbox,
     },
-    mytextclock,     --s.mytasklist, -- Middle widget
+    mytextclock, --s.mytasklist, -- Middle widget
     {
-                     -- Right widgets
+      -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.container.margin(s.systray, 0, 0, 3, 3),
       s.mytasklist,
@@ -328,7 +328,7 @@ awful.rules.rules = {
         "Event Tester",
       },
       role = {
-        "pop-up"   -- e.g. Google Chrome's (detached) Developer Tools.
+        "pop-up" -- e.g. Google Chrome's (detached) Developer Tools.
       }
     },
     properties = { floating = true }
