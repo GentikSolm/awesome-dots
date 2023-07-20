@@ -6,7 +6,7 @@
 !/nvim
 !/README.md
 !/picom
-!rofi.rasi
+!/rofi
 !.gitignore
 !justfile
 !/cloc
