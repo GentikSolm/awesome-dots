@@ -19,12 +19,12 @@ local global_keys = awful.util.table.join(
         { description = 'view next tag', group = 'tag' }
     ),
     awful.key({ modkey },
-        "l",
+        "h",
         awful.client.movetoscreen,
         { description = "Move client to next screen", group = "tag" }
     ),
     awful.key({ modkey },
-        "h",
+        "l",
         function()
             local c = client.focus
             if c then
@@ -34,14 +34,14 @@ local global_keys = awful.util.table.join(
         { description = "Move client to previous screen", group = "tag" }
     ),
     awful.key({ modkey, "Shift" },
-        "l",
+        "h",
         function()
             awful.screen.focus_relative(1)
         end,
         { description = "Focus the next screen", group = "screen" }
     ),
     awful.key({ modkey, "Shift" },
-        "h",
+        "l",
         function()
             awful.screen.focus_relative(-1)
         end,
