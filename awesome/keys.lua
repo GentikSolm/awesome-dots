@@ -133,6 +133,13 @@ local global_keys = awful.util.table.join(
         end,
         { description = "open firefox", group = "app" }
     ),
+    awful.key({ modkey },
+        "o",
+        function()
+            awful.spawn("obsidian")
+        end,
+        { description = "open obsidian", group = "app" }
+    ),
 
     -- Screenshot
     awful.key({},
@@ -301,6 +308,7 @@ local global_keys = awful.util.table.join(
     awful.key({ altkey },
         'm',
         function()
+            client.focus.floating = not client.focus.floating
             client.focus.fullscreen = not client.focus.fullscreen
         end,
         { description = 'Maximize client', group = 'client' }
