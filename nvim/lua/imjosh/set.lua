@@ -18,10 +18,9 @@ local function nvim_create_augroups(definitions)
 end
 
 local autocmds = {
-  terminal_job = {
-    { "TermOpen", "*",        [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
-    { "TermOpen", "*",        "startinsert" },
-    { "TermOpen", "*",        "setlocal listchars= nonumber norelativenumber nocursorline" },
+  terminal_job = { { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
+    { "TermOpen", "*", "startinsert" },
+    { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber nocursorline" },
     { "BufLeave", "term://*", "stopinsert" }
   },
   packer = {
@@ -52,17 +51,18 @@ opt.smartcase = true   -- Do not ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.splitbelow = true  -- Put new windows below current
 opt.splitright = true  -- Put new windows right of current
-opt.tabstop = 4        -- Number of spaces tabs count for
-opt.softtabstop = 4    -- Soft tab stop
-opt.shiftwidth = 4
+opt.tabstop = 2        -- Number of spaces tabs count for
+opt.softtabstop = 2    -- Soft tab stop
+opt.shiftwidth = 2
 opt.incsearch = true
 opt.relativenumber = true     -- relative line numbers
 opt.termguicolors = true      -- True color support
 opt.clipboard = "unnamedplus" -- set clipboard to yank
 opt.laststatus = 3            -- Global Statusline
 g.wildmenu = false
+g.neoformat_try_node_exe = 1
 
-opt.wrap = false     -- Disable line wrap
+opt.wrap = false      -- Disable line wrap
 opt.mouse = "a"      -- make mouse usable
 opt.laststatus = 2   -- keep buffer open
 opt.shell = 'zsh'    -- use zsh shell

@@ -43,13 +43,11 @@ dashboard.section.buttons.val = {
   dashboard.button('e', '  New file', ':ene <BAR> startinsert<CR>'),
   dashboard.button('f', '  Find file', ':Telescope find_files<CR>'),
   dashboard.button('g', '  Grep word', ':Telescope live_grep<CR>'),
-  dashboard.button('d', '⚠  View Diagnostics', ":Telescope coc workspace_diagnostics<CR>"),
   dashboard.button('s', '  Settings', ':e $MYVIMRC<CR>'),
-  dashboard.button('u', '  Update plugins', ':execute "PackerUpdate" | CocUpdate<CR>'),
+  dashboard.button('u', '  Update plugins', ':execute "PackerUpdate" | MasonUpdate<CR>'),
   dashboard.button('q', '  Quit', ':qa<CR>'),
 }
 
 dashboard.section.footer.val = footer()
 
 alpha.setup(dashboard.config)
-

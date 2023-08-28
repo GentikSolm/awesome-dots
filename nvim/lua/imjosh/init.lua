@@ -3,7 +3,8 @@ require('imjosh.remap')
 require('imjosh.plugins')
 require('imjosh.alpha-nvim')
 require('imjosh.plugconf')
-require('imjosh.coc')
+require('imjosh.lsp')
+--require('tailwind-sorter').setup()
 require("nvim-python-repl").setup()
 require("tokyonight").setup({
   transparent = true,
@@ -52,8 +53,6 @@ require('gitsigns').setup {
     map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
-require('telescope').load_extension('coc')
 require('imjosh.feline_config')
 require('feline').winbar.setup()
-require('lspconfig').astro.setup({})
 vim.opt.laststatus = 3

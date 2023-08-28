@@ -19,7 +19,6 @@ nnoremap("<leader>t", ":terminal<CR>")
 -- Telescope
 nnoremap("<leader>ff", ":Telescope find_files<CR>")
 nnoremap("<leader>fg", ":Telescope live_grep<CR>")
-nnoremap("<leader>fd", ":Telescope coc workspace_diagnostics<CR>")
 
 -- Open new tab
 nnoremap("<leader><C-t>", ":tabnew<CR>")
