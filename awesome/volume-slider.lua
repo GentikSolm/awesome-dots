@@ -118,14 +118,14 @@ awesome.connect_signal("volume_change",
                 if exitcode == 0 or spotify.spotify_widget.title then
                     volume_adjust.width = dpi(324)
                     volume_adjust.widget = spotify_volume_adjust
-                    volume_adjust.x = screen.geometry.x + screen.geometry.width - 284
-                    volume_adjust.y = screen.geometry.y + screen.geometry.height - offsetx - 58
+                    volume_adjust.x = screen.geometry.x + screen.geometry.width - 333
+                    volume_adjust.y = screen.geometry.y + screen.geometry.height - offsetx - 68
                     volume_adjust.height = dpi(106)
                 else
                     volume_adjust.width = dpi(256)
                     volume_adjust.widget = base_volume_adjust
-                    volume_adjust.x = screen.geometry.x + screen.geometry.width - 224
-                    volume_adjust.y = screen.geometry.y + screen.geometry.height - offsetx - 8
+                    volume_adjust.x = screen.geometry.x + screen.geometry.width - 273
+                    volume_adjust.y = screen.geometry.y + screen.geometry.height - offsetx - 18
                     volume_adjust.height = dpi(48)
                 end
             end,
