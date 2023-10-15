@@ -19,12 +19,12 @@ local global_keys = awful.util.table.join(
         { description = 'view next tag', group = 'tag' }
     ),
     awful.key({ modkey },
-        "l",
+        "h",
         awful.client.movetoscreen,
         { description = "Move client to next screen", group = "tag" }
     ),
     awful.key({ modkey },
-        "h",
+        "l",
         function()
             local c = client.focus
             if c then
@@ -34,14 +34,14 @@ local global_keys = awful.util.table.join(
         { description = "Move client to previous screen", group = "tag" }
     ),
     awful.key({ modkey, "Shift" },
-        "l",
+        "h",
         function()
             awful.screen.focus_relative(1)
         end,
         { description = "Focus the next screen", group = "screen" }
     ),
     awful.key({ modkey, "Shift" },
-        "h",
+        "l",
         function()
             awful.screen.focus_relative(-1)
         end,
@@ -344,6 +344,36 @@ local global_keys = awful.util.table.join(
     ),
 
     -- AwesomeWM
+    awful.key({ modkey, "Shift" },
+        "o",
+        function()
+          local s1, s2, s3 = nil, nil, nil
+
+          print("Swapping screens")
+
+          for s in screen do
+            if not s1 then
+              s1 = s
+            elseif not s2 then
+              s2 = s
+            elseif not s3 then
+              s3 = s
+            else
+              break
+            end
+          end
+
+          if not s1 or not s2 or not s3 then
+            print("Didn't find screens to swap")
+          end
+
+          print("Swapping between", s1.name, "with geo", s1.geometry.width .. "x" .. s1.geometry.height)
+          print("and", s3.name, "with geo", s3.geometry.width .. "x" .. s3.geometry.height)
+
+          s1:swap(s3)
+        end,
+        { description = "Swap screens", group = "awesome" }
+    ),
     awful.key({ modkey, "Shift" },
         "r",
         function()
