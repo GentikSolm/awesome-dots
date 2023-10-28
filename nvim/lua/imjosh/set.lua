@@ -70,4 +70,6 @@ opt.spelllang = "en" -- language for spell checker
 opt.spellsuggest = "best, 9"
 opt.undofile = true  -- Unlimited undos!!!
 
+vim.filetype.add({extension = {mdx = 'mdx'}})
+
 nvim_create_augroups(autocmds)

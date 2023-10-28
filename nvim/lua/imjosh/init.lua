@@ -55,4 +55,6 @@ require('gitsigns').setup {
 }
 require('imjosh.feline_config')
 require('feline').winbar.setup()
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.mdx = "markdown"
 vim.opt.laststatus = 3
