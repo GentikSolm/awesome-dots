@@ -32,6 +32,9 @@ return require('packer').startup(function()
     end,
   }
 
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
+
   -- Syntax highlighter
   -- use 'sheerun/vim-polyglot'
 

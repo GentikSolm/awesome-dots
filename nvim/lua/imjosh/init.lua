@@ -4,6 +4,7 @@ require('imjosh.plugins')
 require('imjosh.alpha-nvim')
 require('imjosh.plugconf')
 require('imjosh.lsp')
+require('go').setup()
 --require('tailwind-sorter').setup()
 require("nvim-python-repl").setup()
 require("tokyonight").setup({
