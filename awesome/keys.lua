@@ -194,15 +194,17 @@ local global_keys = awful.util.table.join(
     awful.key({},
         "XF86AudioRaiseVolume",
         function()
-            awful.util.spawn("amixer -D pulse sset Master 2%+", false)
-            awesome.emit_signal("volume_change")
+            awful.spawn.easy_async("amixer -D pulse sset Master 2%+", function ()
+              awesome.emit_signal("volume_change")
+            end)
         end
     ),
     awful.key({},
         "XF86AudioLowerVolume",
         function()
-            awful.util.spawn("amixer -D pulse sset Master 2%-", false)
-            awesome.emit_signal("volume_change")
+            awful.spawn.easy_async("amixer -D pulse sset Master 2%-", function ()
+              awesome.emit_signal("volume_change")
+            end)
         end
     ),
     awful.key({},
