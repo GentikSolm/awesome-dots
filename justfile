@@ -38,6 +38,9 @@ _fixnetwork:
 mirrors:
     @sudo reflector --sort rate -l 5 --country "US" -p https,rsync --save /etc/pacman.d/mirrorlist
 
+tripple:
+  xrandr --output DP-2 --primary --mode 2560x1440 --rate 120 --pos 2560x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 0x0 --rotate normal --output DP-0 --mode 2560x1440 --rate 144 --pos 5120x0 --rotate normal --output DP-4 --off
+
 screenpad:
     #!/bin/bash
     set -euxo pipefail
