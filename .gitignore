@@ -9,7 +9,7 @@
 !.gitignore
 !justfile
 !cloc
-!.zsh_base
+!.zsh_base.zsh
 *.lck
 nvim/plugin
 nvim/spell
