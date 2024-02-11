@@ -1,9 +1,21 @@
 return {
   "hrsh7th/nvim-cmp",
-  dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path", "hrsh7th/cmp-buffer", "hrsh7th/cmp-vsnip" },
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip"
+  },
   config = function()
     local cmp = require('cmp')
     cmp.setup {
+      snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+          vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        end,
+      },
       mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
         ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
@@ -29,6 +41,7 @@ return {
       }),
       sources = {
         { name = 'nvim_lsp' },
+        { name = 'vsnip' }
       },
     }
     local ensure_installed = {
