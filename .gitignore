@@ -13,3 +13,4 @@
 *.lck
 nvim/plugin
 nvim/spell
+nvim/lazy-lock.json
