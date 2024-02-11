@@ -4,6 +4,7 @@ return {
   config = function()
     local configs = require('nvim-treesitter.configs')
     configs.setup({
+      ensure_installed = { "tsx", "lua", "typescript"},
       autotag = {
         enable = true,
       },
