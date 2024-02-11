@@ -10,6 +10,7 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 * [picom](https://github.com/yshui/picom) as compositor
 * [rofi](https://github.com/davatorium/rofi) as application launcher
 * [Cousine](https://fonts.google.com/specimen/Cousine) as a font, patched with [nerd fonts](https://www.nerdfonts.com/)
+* [ZSH](https://ohmyz.sh/) as a shell
 
 ### Bonus
 
