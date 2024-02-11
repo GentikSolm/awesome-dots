@@ -1,1 +1,1 @@
-exclude-lang YAML,JSON,SVG
+vcs git

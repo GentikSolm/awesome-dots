@@ -10,7 +10,6 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 * [picom](https://github.com/yshui/picom) as compositor
 * [rofi](https://github.com/davatorium/rofi) as application launcher
 * [Cousine](https://fonts.google.com/specimen/Cousine) as a font, patched with [nerd fonts](https://www.nerdfonts.com/)
-* [Slides](https://github.com/maaslalani/slides) for the CLI. Check out [charm](https://charm.sh/) while your at it.
 
 ### Bonus
 
@@ -31,10 +30,7 @@ Most of these dont have dotfiles associated with them, but i use them nonetheles
 * [wireguard](https://www.wireguard.com/) - personal VPN
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/34988548/205111268-698b0b7a-2225-41d7-a07c-67d4bda346b6.png)
-![image](https://user-images.githubusercontent.com/34988548/235247404-f2461450-4052-404d-a6b8-fd923ea04b2b.png)
-![image](https://user-images.githubusercontent.com/34988548/205111838-c5199625-a5c9-4a96-b554-29aa9a6bfdef.png)
-
+@ TODO ON GITHUB
 
 ## More info
 

@@ -6,6 +6,7 @@ update:
     flatpak update
 
 fresharch:
+    # TODO this entire recipe
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
     # install yay packages yay -Y --devel --combinedupgrade --batchinstall --save yay awesome-git
@@ -31,16 +32,19 @@ fresharch:
     # start docker sercice
     sudo systemctl enable docker.service
 
-# Im just putting this here so i dont lose it.
+# For when my laptop network freaks out
 _fixnetwork:
     sudo systemctl restart nscd.service
 
+# Reset arch mirrors
 mirrors:
     @sudo reflector --sort rate -l 5 --country "US" -p https,rsync --save /etc/pacman.d/mirrorlist
 
+# Fix screen setup on tripple monitor
 tripple:
   xrandr --output DP-2 --primary --mode 2560x1440 --rate 120 --pos 2560x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 0x0 --rotate normal --output DP-0 --mode 2560x1440 --rate 144 --pos 5120x0 --rotate normal --output DP-4 --off
 
+# Re-patch screenpad for zenbook duo
 screenpad:
     #!/bin/bash
     set -euxo pipefail

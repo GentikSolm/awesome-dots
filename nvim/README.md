@@ -1,26 +1,22 @@
 # Neovim dotfiles
 
-Blazingly fast neovim config. I try to be slightly minimal yet highly functional
-
-### Dependencies
-
-* `Packer` as a package manager
-* `Mason` as lsp manager
-* `ripgrep` for telescope ripgrep pane
+My neovim config. I try to be more-less minimal yet highly functional
 
 ### Featuring
 
 * Telescope for jumping between files
 * Tokyonight as a theme
 * neo-tree as filetree
-
+* Lazy plugin manager
+* Feline statusline
+* So many more (im lazy to list them here)
 
 ### Installation
 
-First, make sure `packer` is installed,
-Next clone the contents of this folder to `~/.config/nvim/`,
-Then run `:PackerSync` to install all plugins, and then install any desired `Mason` extensions.  
+clone dotfiles and open neovim, everything will self install.
 
-### Custom Keybinds
+### Layout
 
-Keybinds can be found in `remap.lua` and general settings in `set.lua`.  
+- Core settings in `lua/core/*`
+- Plugin settings in `lua/plugins/*`
+
