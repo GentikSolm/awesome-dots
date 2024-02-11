@@ -12,4 +12,4 @@
 !/cloc
 *.lck
 nvim/plugin
-
+nvim/spell
