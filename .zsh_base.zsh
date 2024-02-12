@@ -80,13 +80,14 @@ export LC_ALL="en_US.UTF-8"
 # ░█▀▄░█▀▀░░█░░█▀▄░░█░░█░█░█░█░▀▀█
 # ░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀░▀▀░░▀▀▀
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf ] && source /usr/share/fzf/completion.zsh
 
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type d --follow"
+export FZF_ALT_C_COMMAND="fd --type d --follow -E go -E Library -E Music"
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always {1}'"
 
@@ -213,10 +214,10 @@ fi
 # Generic command adaptations
 alias grep='() { $(whence -p grep) --color=auto $@ }'
 alias view="kitty +kitten icat"
-alias ls="exa --long --icons -F"
-alias la="exa --long --icons -aF"
-alias lst="exa --long --tree -aF -I node_modules\|.git --git-ignore"
-alias lsta="exa --long --tree -aF"
+alias ls="eza --long --icons -F"
+alias la="eza --long --icons -aF"
+alias lst="eza --long --tree -aF -I node_modules\|.git --git-ignore"
+alias lsta="eza --long --tree -aF"
 
 alias dcu="docker compose up -d"
 alias dc="docker compose"

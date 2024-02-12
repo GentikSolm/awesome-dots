@@ -11,6 +11,7 @@
 !cloc
 !.zsh_base.zsh
 !gitconfig
+!.zprofile
 *.lck
 nvim/plugin
 nvim/spell
