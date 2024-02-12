@@ -1,0 +1,36 @@
+[core]
+    pager = delta
+	excludesfile = /home/josh/.gitignore
+	compression = 0
+[interactive]
+    diffFilter = delta --color-only
+[add.interactive]
+    useBuiltin = false
+[delta]
+    navigate = true
+    side-by-side = true
+    light = false
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+
+[user]
+	name = #TODO
+	email = #TODO
+  signingkey = #TODO
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[gpg "ssh"]
+	allowedSignersFile = #TODO
+[alias]
+    # Adds worktree to .worktrees folder
+    wt = "!git worktree add .worktrees/$1 $1 #"
+[pull]
+	rebase = true

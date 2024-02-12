@@ -10,6 +10,7 @@
 !justfile
 !cloc
 !.zsh_base.zsh
+!gitconfig
 *.lck
 nvim/plugin
 nvim/spell
