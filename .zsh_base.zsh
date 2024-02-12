@@ -1,3 +1,10 @@
+# ░▀█▀░█▀▀░█▀▄░█▄█░▀█▀░█▀█░█▀█░█░░░░░█▀▀░█▄█░█░█░█░░░█▀█░▀█▀░█▀█░█▀▄
+# ░░█░░█▀▀░█▀▄░█░█░░█░░█░█░█▀█░█░░░░░█▀▀░█░█░█░█░█░░░█▀█░░█░░█░█░█▀▄
+# ░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀
+
+# Get Terminal Emulator
+TERM_EMULATOR=$(ps -h -o comm -p $PPID)
+
 # ░█▀█░█▀▀░█▀█░█▀▀░█▀▀░▀█▀░█▀▀░█░█
 # ░█░█░█▀▀░█░█░█▀▀░█▀▀░░█░░█░░░█▀█
 # ░▀░▀░▀▀▀░▀▀▀░▀░░░▀▀▀░░▀░░▀▀▀░▀░▀
@@ -5,14 +12,14 @@
 if [[ "$TERM_EMULATOR" == *"kitty"* ]];
 then
 	# kitty
-	neofetch --backend 'kitty'
+	neofetch
 elif [[  "$TERM_EMULATOR" == *"tmux"*  ]] || [[ "$TERM_EMULATOR" == "login" ]];
 	then
 	# tmux
 	neofetch --backend 'w3m'
 else
 	# xterm and rxvt
-	neofetch --backend 'w3m' --xoffset 40 --yoffset 40 --gap 0
+	neofetch --backend 'w3m'
 fi
 
 # ░▀▀█░█▀▀░█░█░░░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀
@@ -60,13 +67,6 @@ setopt pushd_minus				# Reference stack entries with "-".
 
 setopt extended_glob				# Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename generation, etc. (An initial unquoted ‘~’ always produces named directory expansion.)
 setopt -o vi
-
-# ░▀█▀░█▀▀░█▀▄░█▄█░▀█▀░█▀█░█▀█░█░░░░░█▀▀░█▄█░█░█░█░░░█▀█░▀█▀░█▀█░█▀▄
-# ░░█░░█▀▀░█▀▄░█░█░░█░░█░█░█▀█░█░░░░░█▀▀░█░█░█░█░█░░░█▀█░░█░░█░█░█▀▄
-# ░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀
-
-# Get Terminal Emulator
-TERM_EMULATOR=$(ps -h -o comm -p $PPID)
 
 # ░█░░░█▀█░█▀▀░█▀█░█░░░█▀▀
 # ░█░░░█░█░█░░░█▀█░█░░░█▀▀
