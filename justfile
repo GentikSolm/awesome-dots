@@ -10,7 +10,7 @@ bootstrap_apple:
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo " eval \"$(/opt/homebrew/bin/brew shellenv)\"" >> ~/.zprofile
-    brew install neovim firefox gh kitty cloc go node neofetch eza bat tree rg fd coreutils
+    brew install neovim firefox gh kitty cloc go node neofetch eza bat tree rg fd coreutils spotify
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
     mkdir ~/github
     cd ~/github

@@ -2,12 +2,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
   {
     virtual_text = false,
-    signs = true,
+    signs = false,
     update_in_insert = false,
-    underline = true,
+    underline = false,
   }
 )
-
 function OpenDiagnosticIfNoFloat()
   for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
     if vim.api.nvim_win_get_config(winid).zindex then
