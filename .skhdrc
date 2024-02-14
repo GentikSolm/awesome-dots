@@ -1,0 +1,15 @@
+lalt + shift - k : yabai -m space --focus next
+lalt + shift - j : yabai -m space --focus prev
+
+lalt - return : /opt/homebrew/bin/kitty
+lalt - b : /opt/homebrew/bin/firefox
+lalt - d : /opt/homebrew/bin/discord
+
+cmd - h : yabai -m window --focus prev
+cmd - l : yabai -m window --focus next
+
+cmd + shift - j : ~/skhd/cycle_clockwise.sh
+cmd + shift - k : ~/skhd/cycle_counterclockwise.sh
+
+lalt - k : yabai -m window --space next --focus
+lalt - j : yabai -m window --space prev --focus

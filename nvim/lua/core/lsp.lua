@@ -4,7 +4,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = false,
     signs = false,
     update_in_insert = false,
-    underline = false,
+    underline = true,
   }
 )
 function OpenDiagnosticIfNoFloat()

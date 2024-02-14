@@ -12,6 +12,8 @@
 !.zsh_base.zsh
 !gitconfig
 !.zprofile
+!.skhdrc
+!.yabairc
 *.lck
 nvim/plugin
 nvim/spell
