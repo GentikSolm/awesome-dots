@@ -22,11 +22,10 @@ Most of these dont have dotfiles associated with them, but i use them nonetheles
 
 * [just](https://github.com/casey/just) - cmake but for shell scripts
 * [batcat](https://github.com/sharkdp/bat) - a modern cat
-* [exa](https://github.com/ogham/exa) - a modern ls
+* [eza](https://github.com/eza-community/eza) - a modern ls
 * [Docker](https://www.docker.com/) - for containerizing projects
 * [bottom](https://github.com/ClementTsang/bottom) - modern hardware monitor
 * [cloc](https://github.com/AlDanial/cloc) - to count lines of code
-* [htop](https://github.com/htop-dev/htop) - a modern top
 * [oh-my-zsh](https://ohmyz.sh/) - with [powerlevel10k](https://github.com/romkatv/powerlevel10k) as a theme
 * [wireguard](https://www.wireguard.com/) - personal VPN
 
