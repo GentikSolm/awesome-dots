@@ -81,8 +81,8 @@ export LC_ALL="en_US.UTF-8"
 # ░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀░▀▀░░▀▀▀
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/share/fzf ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export FZF_DEFAULT_COMMAND="rg --files"
