@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', '<leader>fc', function()
       vim.lsp.buf.format { async = false }
-      vim.api.nvim_command('Neoformat')
+      require("conform").format()
     end, opts)
   end,
 })

@@ -33,7 +33,6 @@ opt.relativenumber = true     -- relative line numbers
 opt.termguicolors = true      -- True color support
 opt.clipboard = "unnamedplus" -- set clipboard to yank
 g.wildmenu = false
-g.neoformat_try_node_exe = 1
 
 opt.wrap = false      -- Disable line wrap
 opt.mouse = "a"      -- make mouse usable
