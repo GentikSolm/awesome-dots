@@ -6,8 +6,8 @@ return {
       debounce = 50,
       scope = {
         show_start = false,
-        show_end = false
-      }
+        show_end = false,
+      },
     })
   end,
 }

@@ -1,13 +1,13 @@
 return {
   "jedrzejboczar/possession.nvim",
-  dependencies = {"nvim-lua/plenary.nvim"},
+  dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require('possession').setup({
+    require("possession").setup({
       autosave = {
         tmp = true,
         current = true,
         on_quit = true,
-      }
+      },
     })
-  end
+  end,
 }

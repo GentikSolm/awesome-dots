@@ -188,7 +188,7 @@ return {
   event = "CmdlineEnter",
   dependencies = { "lewis6991/gitsigns.nvim" },
   config = function()
-    local feline = require('feline')
+    local feline = require("feline")
     feline.setup({
       components = {
         active = {
@@ -227,5 +227,5 @@ return {
       },
     })
     feline.winbar.setup()
-  end
+  end,
 }

@@ -1,10 +1,7 @@
 local function bind(op, outer_opts)
   outer_opts = outer_opts or { noremap = true }
   return function(lhs, rhs, opts)
-    opts = vim.tbl_extend("force",
-      outer_opts,
-      opts or {}
-    )
+    opts = vim.tbl_extend("force", outer_opts, opts or {})
     vim.keymap.set(op, lhs, rhs, opts)
   end
 end
@@ -37,19 +34,19 @@ nnoremap("<leader>gb", ":Gitsigns toggle_current_line_blame")
 nnoremap("<leader>gd", ":Gitsigns diffthis")
 
 -- Misc helpers
-nnoremap("<leader>p", "\"0p<CR>")
+nnoremap("<leader>p", '"0p<CR>')
 nnoremap("<leader>ra", ":%s/")
 
 -- LSP
 nnoremap("<leader>e", vim.diagnostic.open_float)
-nnoremap('[d', vim.diagnostic.goto_prev)
-nnoremap(']d', vim.diagnostic.goto_next)
-nnoremap('<leader>q', vim.diagnostic.setloclist)
+nnoremap("[d", vim.diagnostic.goto_prev)
+nnoremap("]d", vim.diagnostic.goto_next)
+nnoremap("<leader>q", vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
     -- Enable completion triggered by <c-x><c-o>
     -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
@@ -57,18 +54,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<leader>fc', function()
-      vim.lsp.buf.format { async = false }
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<leader>fc", function()
       require("conform").format()
+      vim.lsp.buf.format({ async = false })
     end, opts)
   end,
 })

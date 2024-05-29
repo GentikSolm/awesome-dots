@@ -3,7 +3,7 @@ local opt = vim.opt -- to set options
 local api = vim.api
 
 g.mapleader = ","
-g.maplocalleader = ' '
+g.maplocalleader = " "
 
 -- coc Config
 opt.signcolumn = "number"
@@ -34,39 +34,40 @@ opt.termguicolors = true      -- True color support
 opt.clipboard = "unnamedplus" -- set clipboard to yank
 g.wildmenu = false
 
-opt.wrap = false      -- Disable line wrap
+opt.wrap = false     -- Disable line wrap
 opt.mouse = "a"      -- make mouse usable
 opt.laststatus = 2   -- keep buffer open
-opt.shell = 'zsh'    -- use zsh shell
+opt.shell = "zsh"    -- use zsh shell
 opt.spelllang = "en" -- language for spell checker
 opt.spellsuggest = "best, 9"
 opt.undofile = true  -- Unlimited undos!!!
 
-opt.colorcolumn ="80"
+opt.colorcolumn = "80"
 
-vim.filetype.add({extension = {mdx = 'mdx'}})
+vim.filetype.add({ extension = { mdx = "mdx" } })
 
 local function nvim_create_augroups(definitions)
   for group_name, definition in pairs(definitions) do
-    api.nvim_command('augroup ' .. group_name)
-    api.nvim_command('autocmd!')
+    api.nvim_command("augroup " .. group_name)
+    api.nvim_command("autocmd!")
     for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten { 'autocmd', def }, ' ')
+      local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
       api.nvim_command(command)
     end
-    api.nvim_command('augroup END')
+    api.nvim_command("augroup END")
   end
 end
 
 local autocmds = {
-  terminal_job = { { "TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
-    { "TermOpen", "*", "startinsert" },
-    { "TermOpen", "*", "setlocal listchars= nonumber norelativenumber nocursorline" },
-    { "BufLeave", "term://*", "stopinsert" }
+  terminal_job = {
+    { "TermOpen", "*",        [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
+    { "TermOpen", "*",        "startinsert" },
+    { "TermOpen", "*",        "setlocal listchars= nonumber norelativenumber nocursorline" },
+    { "BufLeave", "term://*", "stopinsert" },
   },
   packer = {
-    { "BufWritePost", "plugins.lua", "PackerCompile" }
-  }
+    { "BufWritePost", "plugins.lua", "PackerCompile" },
+  },
 }
 
 nvim_create_augroups(autocmds)

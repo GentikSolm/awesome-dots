@@ -7,17 +7,14 @@ return {
   },
   config = function()
     require("go").setup()
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics,
-      {
-        virtual_text = false,
-        signs = true,
-        update_in_insert = false,
-        underline = true,
-      }
-    )
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = false,
+      signs = true,
+      update_in_insert = false,
+      underline = true,
+    })
   end,
   event = { "CmdlineEnter" },
-  ft = { "go", 'gomod' },
-  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  ft = { "go", "gomod" },
+  build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 }

@@ -6,21 +6,21 @@ return {
   },
   config = function()
     local ensure_installed = {
-      'lua_ls',
-      'astro',
-      'bashls',
-      'dockerls',
-      'eslint',
-      'gopls',
-      'tsserver',
-      'marksman',
-      'pyright',
-      'tailwindcss',
-      'yamlls'
+      "lua_ls",
+      "astro",
+      "bashls",
+      "dockerls",
+      "eslint",
+      "gopls",
+      "tsserver",
+      "marksman",
+      "pyright",
+      "tailwindcss",
+      "yamlls",
     }
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = ensure_installed
+      ensure_installed = ensure_installed,
     })
-  end
+  end,
 }

@@ -1,22 +1,22 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   opts = {},
   config = function()
     require("conform").setup({
       formatters = {
         mdformat = {
           prepend_args = { "--wrap", "80" },
-        }
+        },
       },
       formatters_by_ft = {
         lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
-        python = { "isort", "black" },
-        -- Use a sub-list to run only the first available formatter
+        python = { "black" },
+        typescript = { { "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
         javascript = { { "prettierd", "prettier" } },
-        typescript = { "prettier" },
-        markdown = { "mdformat" }
+        javascriptreact = { { "prettierd", "prettier" } },
+        markdown = { "mdformat" },
       },
     })
-  end
+  end,
 }
