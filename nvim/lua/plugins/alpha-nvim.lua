@@ -26,12 +26,21 @@ return {
 
     dashboard.section.header.val = banner
 
+    local workspace_button = nil
+    local session_name = vim.fn.fnamemodify(vim.loop.cwd(), ":t")
+    local session_path = vim.fn.stdpath("data") .. "/possession/" .. session_name .. ".json"
+    if vim.fn.filereadable(session_path) == 1 then
+      workspace_button = dashboard.button("l", "⟳  Load Workspace", function()
+        vim.cmd(":PossessionLoad " .. session_name)
+      end)
+    end
+
     -- Menu
     dashboard.section.buttons.val = {
       dashboard.button("e", "  New file", ":ene <BAR> startinsert<CR>"),
       dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
       dashboard.button("g", "  Grep word", ":Telescope live_grep<CR>"),
-      dashboard.button("l", "⟳  Load Workspace", ":PossessionLoad tmp<CR>"),
+      workspace_button,
       dashboard.button("s", "  Settings", ":e $MYVIMRC<CR>"),
       dashboard.button("u", "  Update plugins", function()
         vim.cmd(":TSUpdate")
