@@ -5,12 +5,10 @@ return {
     local configs = require("nvim-treesitter.configs")
     configs.setup({
       ensure_installed = { "tsx", "lua", "typescript" },
-      autotag = {
-        enable = true,
-      },
       highlight = {
         enable = true,
       },
     })
+    require("nvim-ts-autotag").setup()
   end,
 }
