@@ -30,8 +30,8 @@ nnoremap("<leader><C-t>", ":tabnew<CR>")
 
 -- Git
 nnoremap("<leader>G", ":Neotree float git_status<CR>")
-nnoremap("<leader>gb", ":Gitsigns toggle_current_line_blame")
-nnoremap("<leader>gd", ":Gitsigns diffthis")
+nnoremap("<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
+nnoremap("<leader>gd", ":Gitsigns diffthis<CR>")
 
 -- Misc helpers
 nnoremap("<leader>p", '"0p<CR>')
