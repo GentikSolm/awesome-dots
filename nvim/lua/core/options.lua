@@ -65,9 +65,6 @@ local autocmds = {
     { "TermOpen", "*",        "setlocal listchars= nonumber norelativenumber nocursorline" },
     { "BufLeave", "term://*", "stopinsert" },
   },
-  packer = {
-    { "BufWritePost", "plugins.lua", "PackerCompile" },
-  },
 }
 
 nvim_create_augroups(autocmds)
