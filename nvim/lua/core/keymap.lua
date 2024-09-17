@@ -17,6 +17,7 @@ nnoremap("<C-u>", "<C-u>zz")
 
 -- Clear search results
 nnoremap("<leader>sc", ":noh<CR>")
+nnoremap("<Esc>", ":noh<CR>")
 
 -- Open terminal
 nnoremap("<leader>t", ":terminal<CR>")

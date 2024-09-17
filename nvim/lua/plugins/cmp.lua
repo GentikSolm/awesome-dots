@@ -71,7 +71,7 @@ return {
       "dockerls",
       "eslint",
       "gopls",
-      "tsserver",
+      "ts_ls",
       "marksman",
       "pyright",
       "tailwindcss",
@@ -80,7 +80,6 @@ return {
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     lspconfig.pyright.setup({})
-    lspconfig.tsserver.setup({})
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
     for _, lsp in ipairs(ensure_installed) do
       lspconfig[lsp].setup({

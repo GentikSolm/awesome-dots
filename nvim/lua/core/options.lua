@@ -15,7 +15,6 @@ opt.expandtab = true   -- Use spaces instead of tabs
 opt.hidden = true      -- Enable background buffers
 opt.ignorecase = true  -- Ignore case
 opt.joinspaces = false -- No double spaces with join
---opt.list = true        -- Show some invisible characters
 opt.number = true      -- Show line numbers
 opt.scrolloff = 4      -- Lines of context
 opt.shiftround = true  -- Round indent
@@ -33,6 +32,7 @@ opt.relativenumber = true     -- relative line numbers
 opt.termguicolors = true      -- True color support
 opt.clipboard = "unnamedplus" -- set clipboard to yank
 g.wildmenu = false
+opt.cursorline = true
 
 opt.wrap = false     -- Disable line wrap
 opt.mouse = "a"      -- make mouse usable

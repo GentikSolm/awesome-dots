@@ -226,6 +226,11 @@ alias dcl="docker compose logs -f"
 alias rm='rm -v'
 alias wgup="wg-quick up wg0"
 
+if [[ "$TERM_EMULATOR" == *"kitty"* ]];
+then
+  alias ssh='kitten ssh'
+fi
+
 autoload -Uz add-zsh-hook 
 add-zsh-hook precmd automatically_activate_python_venv
 

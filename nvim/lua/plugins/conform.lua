@@ -11,10 +11,10 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "black" },
-        typescript = { { "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
-        javascript = { { "prettierd", "prettier" } },
-        javascriptreact = { { "prettierd", "prettier" } },
+        typescript = { "prettier" },
+        typescriptreact = { "prettierd", "prettier" },
+        javascript = { "prettierd", "prettier" },
+        javascriptreact = { "prettierd", "prettier" },
         markdown = { "mdformat" },
       },
     })

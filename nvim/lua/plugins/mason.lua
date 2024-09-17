@@ -12,7 +12,6 @@ return {
       "dockerls",
       "eslint",
       "gopls",
-      "tsserver",
       "marksman",
       "pyright",
       "tailwindcss",
