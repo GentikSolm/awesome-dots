@@ -28,6 +28,16 @@ local c = {
     left_sep = "block",
     right_sep = "block",
   },
+  gitRemote = {
+    provider = "git_remote",
+    hl = {
+      fg = "peanut",
+      bg = "darkblue",
+      style = "bold",
+    },
+    left_sep = "block",
+    right_sep = "block",
+  },
   gitDiffAdded = {
     provider = "git_diff_added",
     hl = {
@@ -159,6 +169,7 @@ local c = {
 
 local left = {
   c.gitBranch,
+  c.gitRemote,
   c.gitDiffAdded,
   c.gitDiffRemoved,
   c.gitDiffChanged,
@@ -180,12 +191,29 @@ local right = {
 }
 
 return {
-  "feline-nvim/feline.nvim",
+  "freddiehaddad/feline.nvim",
   event = "CmdlineEnter",
   dependencies = { "lewis6991/gitsigns.nvim" },
   config = function()
     local feline = require("feline")
     feline.setup({
+      custom_providers = {
+        git_remote = function()
+          local branch = vim.system({
+                "git",
+                "rev-parse",
+                "--abbrev-ref",
+                "--symbolic-full-name",
+                "@{u}",
+              })
+              :wait().stdout
+              :sub(1, -2)
+          if branch == nil then
+            return ""
+          end
+          return branch
+        end,
+      },
       components = {
         active = {
           left,
