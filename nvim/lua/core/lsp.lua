@@ -24,6 +24,14 @@ function OpenDiagnosticIfNoFloat()
   })
 end
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = ".env",
+  group = vim.api.nvim_create_augroup("__env", {clear=true}),
+  callback = function(args)
+    vim.diagnostic.disable(args.buf)
+  end
+})
+
 -- Show diagnostics under the cursor when holding position
 vim.api.nvim_create_augroup("lsp_diagnostics_hold", { clear = true })
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
