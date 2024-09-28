@@ -34,7 +34,9 @@ Most of these dont have dotfiles associated with them, but i use them nonetheles
 * [wireguard](https://www.wireguard.com/) - personal VPN
 
 ## Screenshots
-@ TODO ON GITHUB
+
+<img width="1728" alt="image" src="https://github.com/user-attachments/assets/afa6a424-330a-4359-bb53-2cc8a35d3f19">
+
 
 ## More info
 
