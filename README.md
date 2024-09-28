@@ -6,13 +6,17 @@ A collection of dotfiles for the different programs and tools I use on a day to 
 
 * [Neovim](https://neovim.io/) as Editor
 * [Kitty](https://sw.kovidgoyal.net/kitty/) as terminal emulator
-* [AwesomeWM](https://awesomewm.org/) as window manager
-* [picom](https://github.com/yshui/picom) as compositor
-* [rofi](https://github.com/davatorium/rofi) as application launcher
 * [Cousine](https://fonts.google.com/specimen/Cousine) as a font, patched with [nerd fonts](https://www.nerdfonts.com/)
 * [ZSH](https://ohmyz.sh/) as a shell
+* [skhd](https://github.com/koekeishiya/skhd) as a hotkey manager
+* [yabai](https://github.com/koekeishiya/yabai) as a window manaager
+* [yabai](https://github.com/koekeishiya/yabai) as a window manaager
+* [Übersicht](https://github.com/felixhageloh/uebersicht) for ricing
+* [simple-bar](https://github.com/Jean-Tinland/simple-bar) for top bar
 
 ### Bonus
+
+Some of my other dotfiles for linux are on here too.
 
 If your mad enough to put linux on an Asus Zenbook Duo, you can find the XORG conf files required to get the second screen working +
 calibration [here](misc).
