@@ -15,6 +15,7 @@
 !.skhdrc
 !.yabairc
 !sketchybar
+!macos-misc
 *.lck
 nvim/plugin
 nvim/spell
