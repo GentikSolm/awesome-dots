@@ -1,4 +1,4 @@
-lalt - return : /opt/homebrew/bin/kitty ~
+lalt - return : open -n /Applications/Ghostty.App
 lalt - b : firefox
 lalt - l : /Applications/Linear.app/Contents/MacOS/linear
 

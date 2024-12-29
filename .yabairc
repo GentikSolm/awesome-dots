@@ -37,5 +37,11 @@ yabai -m rule --add app="1Password" manage=off
 borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
+#   Update all Wallpapers
+yabai -m signal --add event=space_created action='/Users/josh/skhd/wallpaper.sh'
+
 echo "yabai configuration loaded.."
 
