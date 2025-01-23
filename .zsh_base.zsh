@@ -11,14 +11,22 @@ TERM_EMULATOR=$(ps -h -o comm -p $PPID)
 
 if [[ "$TERM_EMULATOR" == *"kitty"* ]];
 then
-	# kitty
 	neofetch
+	export TERM="xterm-kitty"
+  alias view="kitty +kitten icat"
+  alias ssh='kitten ssh'
+	alias clear="kitty icat --clear && clear"
+
 elif [[  "$TERM_EMULATOR" == *"tmux"*  ]] || [[ "$TERM_EMULATOR" == "login" ]];
 	then
-	# tmux
+	export TERM="xterm-256color"
 	neofetch --backend 'w3m'
+
+elif [[ "$TERM" == *"xterm-ghostty"* ]];
+  then
+  export TERM="xterm-ghostty"
 else
-	# xterm and rxvt
+	export TERM="xterm-256color"
 	neofetch --backend 'w3m'
 fi
 
@@ -32,7 +40,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Improved less option
-export LESS="--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen --RAW-CONTROL-CHARS"
+export LESS="--tabs=4 --no-init --LONG-PROMPT --ignore-case --RAW-CONTROL-CHARS"
 
 # Watching other users
 # WATCHFMT="%n %a %l from %m at %t."
@@ -188,10 +196,6 @@ fi
 
 [[ ! -f ~/.aliases.zsh ]] || source ~/.aliases.zsh
 
-if [[ $term_emulator == *"kitty"* ]]; then
-	alias clear="kitty icat --clear && clear"
-fi
-
 # ░█░█░█▀▀░█▀▀░█▀▄░░░█▀▀░█░█░█▀█░█▀█░█▀▄░▀█▀░█▀▀
 # ░█░█░▀▀█░█▀▀░█▀▄░░░█▀▀░▄▀▄░█▀▀░█░█░█▀▄░░█░░▀▀█
 # ░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀
@@ -200,20 +204,12 @@ export VISUAL="nvim"
 export EDITOR="$VISUAL"
 export PINENTRY_PROGRAM="pinentry-rofi"
 
-if [[ "$TERM_EMULATOR" == *"kitty"* ]];
-then
-	export TERM="xterm-kitty"
-else
-	export TERM="xterm-256color"
-fi
-
 # ░█▀█░█░░░▀█▀░█▀█░█▀▀
 # ░█▀█░█░░░░█░░█▀█░▀▀█
 # ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
 
 # Generic command adaptations
 alias grep='() { $(whence -p grep) --color=auto $@ }'
-alias view="kitty +kitten icat"
 alias ls="eza --long --icons -F"
 alias la="eza --long --icons -aF"
 alias lst="eza --long --tree -aF -I node_modules\|.git --git-ignore"
@@ -225,11 +221,6 @@ alias dcd="docker compose down"
 alias dcl="docker compose logs -f"
 alias rm='rm -v'
 alias wgup="wg-quick up wg0"
-
-if [[ "$TERM_EMULATOR" == *"kitty"* ]];
-then
-  alias ssh='kitten ssh'
-fi
 
 autoload -Uz add-zsh-hook 
 add-zsh-hook precmd automatically_activate_python_venv

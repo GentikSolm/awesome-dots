@@ -70,16 +70,33 @@ return {
       "bashls",
       "dockerls",
       "eslint",
-      "gopls",
       "ts_ls",
       "marksman",
-      "pyright",
       "tailwindcss",
       "yamlls",
     }
     local lspconfig = require("lspconfig")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
     lspconfig.pyright.setup({})
+    lspconfig.solidity_ls_nomicfoundation.setup({})
+    lspconfig.solidity_ls.setup({
+      capabilities = capabilities,
+      cmd = { "vscode-solidity-server", "--stdio" },
+      filetypes = { "solidity" },
+    })
+    lspconfig.gopls.setup({
+      capabilities = capabilities,
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+        },
+      },
+    })
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
     for _, lsp in ipairs(ensure_installed) do
       lspconfig[lsp].setup({
